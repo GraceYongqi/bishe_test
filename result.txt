@@ -1,0 +1,598 @@
+title	社论 | 抗癌进口药零关税，谁将成为中国新一轮开放的获益者？ - 经济观察网 － 专业财经新闻网站
+keywords	
+description	抗癌药进口零关税意味着强度更大的竞争。不过我们要说，对于正在寻求转型升级的中国企业来说，有强劲的对手在身边并非坏事。
+author	经济观察网 
+body		
+<!-- top -->
+<!--<script>
+//判断是否为移动端，跳转移动端页面;
+function IsPC(){  
+   var userAgentInfo = navigator.userAgent;  
+   var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
+   var flag = true;  1
+   for (var v = 0; v < Agents.length; v++) {  
+	   if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
+   }  
+   return flag;  
+}  
+if(!IsPC()){
+	window.location.href="http://m.eeo.com.cn";
+} 
+</script>-->
+
+<!--Link array-->
+<div class="xd-logo">
+			<div class="xd-logo-jz">
+				<a href="http://www.eeo.com.cn/"><img src="http://img.eeo.com.cn/pc/images/logo.png" alt="" /></a>
+				<div class="xd-logo-r">
+					<!--登录后 star-->
+					<div class="fg_logo" style="display: none;">
+						<div class="xd-logo-lb">
+						</div>
+						<div class="xd-logo-la">
+                    	  <p><span>您好</span> <a href="http://app.eeo.com.cn/?app=memberpay&controller=index&action=eeoepaper" id="nickname"></a> </p><a style="width: 40px;" class="tc_logo_dl">退出</a>
+						</div>
+					</div>
+					<!--登录后 end-->
+					<!--登录前 star-->
+					<div class="xd-logo-l">
+						<a href="javascript:void(0);" class="login_dl" >登录</a>
+						<a href="http://app.eeo.com.cn/?app=member&amp;controller=index&amp;action=register">注册</a>
+					</div>
+					<!--登录前 end-->
+					<div class="xd-logo-r-1">
+						<a href="http://www.eeo.com.cn/epaper/eeocover/jjgcb/">电子版</a>
+						<a href="http://app.eeo.com.cn/?app=member&controller=index&action=card">激活卡</a>	
+					</div>
+					<a href="http://app.eeo.com.cn/?app=search&controller=index&action=index"><img src="http://img.eeo.com.cn/pc/images/fangdajing.png" class="xd-img" /></a>
+				</div>
+			</div>
+</div>  
+				<div class="xd-list">
+			<div class="xd-list-jz">
+				<a href="http://www.eeo.com.cn/" class="xd-sy">首页</a>
+				<div class="xd-list-left">
+					<ul class="xd-a1" id="xd-a1">
+						<a href="http://www.eeo.com.cn/yaowen/">
+							<li class="xd-la">时事</li>
+							<li class="xd-lb">政策</li>
+							<li class="xd-lc">宏观</li>
+						</a>
+					</ul>
+					<ul class="xd-a2" id="xd-a2">
+						<a href="http://www.eeo.com.cn/jinrong/">
+							<li class="xd-la">证券</li>
+							<li class="xd-lb">资本</li>
+							<li class="xd-lc">理财</li>
+						</a>
+					</ul>
+					<ul class="xd-a3" id="xd-a3">
+						<a href="http://www.eeo.com.cn/shangye/">
+							<li class="xd-la">新科技</li>
+							<li class="xd-lb">互联网</li>
+							<li class="xd-lc">花蕾之约</li>
+						</a>
+					</ul>
+					<ul class="xd-a4" id="xd-a4">
+						<a href="http://www.eeo.com.cn/bosss/">
+							<li class="xd-la">EEO TV</li>
+						</a>
+					</ul>
+					<ul class="xd-a10" id="xd-a10">
+						<a href="http://www.eeo.com.cn/zixun/">
+							<li class="xd-la">资讯</li>
+						</a>
+					</ul>
+					<ul class="xd-a5" id="xd-a5">
+						<a href="http://www.eeo.com.cn/fcqcxf/">
+							<li class="xd-la">房产</li>
+							<li class="xd-lb">汽车</li>
+							<li class="xd-lc">消费</li>
+						</a>
+					</ul>
+					<ul class="xd-a6" id="xd-a6">
+						<a href="http://www.eeo.com.cn/yule/">
+							<li class="xd-la">影视</li>
+							<li class="xd-lb">体育</li>
+							<li class="xd-lc">娱乐</li>
+						</a>
+					</ul>
+					<ul class="xd-a7" id="xd-a7">
+						<a href="http://www.eeo.com.cn/gcj/">
+							<li class="xd-la">观察家</li>
+							<li class="xd-lb">书评</li>
+							<li class="xd-lc">思想</li>
+						</a>
+					</ul>
+					<ul class="xd-a8" id="xd-a8">
+						<a href="http://www.eeo.com.cn/zhuanti/xwtj/">
+							<li class="xd-la">新闻特辑</li>
+						</a>
+					</ul>
+					<ul class="xd-a9" id="xd-a9">
+						<a href="http://www.eeo.com.cn/huodong/">
+							<li class="xd-la">品牌活动</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!--登录机制修改 2016.10.24 stare-->
+<div id="login_css" class="modal pop_login animated" style="top: 135px; left:50%; margin-left: -210px; display: none; ">
+	<div class="p_b_bd ">
+		<div class="img_logo_wp">
+			<img src="http://img.eeo.com.cn/pc/images/logo.png" alt="">
+		</div>
+		<div class="tb_wpb">
+			<div class="hd">
+				<h3>
+					<p class="ts_p">会员登录</p>
+					<p  class="pay_b_logo" style="">还没有账号？<a  href="http://app.eeo.com.cn/?app=member&controller=index&action=register" title="" class="text_cite">免费注册</a></p>
+				</h3>
+			</div>
+			<div class="bd bd_bg">	
+    				<p id="al_warn" class="in_box_cite color_red" style="display: none;"></p>
+    				<div class="in_box">
+    					<label  for="username" style="" ></label>
+    					<input  class="in_txt" id="username" type="text" name="username" required="required"  placeholder="用户名："/>
+    				</div>
+    				<div class="in_box">
+    					<label for="password" ></label>
+    					<input name="password" value="" class="in_txt" id="password"  required="required" type="password" placeholder="密码" >
+    				</div>
+    				<div class="in_box in_boxa" style="display:block;">
+    					<!--<input class="chk" name="cookietime" value="1296000" type="checkbox">
+						<label for="loginkeeping" class="cbox" ></label>
+ 							<sapn>下次自动登录</span></label>-->
+    				</div>
+    				<div class="pay_btn">
+    					<input class="login_dl_pd" type="submit" value="登 录" />
+    				</div>
+    				<p class="pay_a_logo"><a href="http://app.eeo.com.cn/?app=member&amp;controller=index&amp;action=getpassword" title="忘记密码？" target="_blank" class="text_cite">忘记密码？</a></p>
+    				
+						<div style="height: 20px; width: 100%; clear: both;"></div>
+			</div>
+		</div>
+		<a id="log_close" class="p_b_close" title="关闭" href="javascript:void(0);">关闭</a>
+	</div>
+</div>
+<div class="overlay" style=" display: none;"></div>
+ <!--登录机制修改 2016.10.24 end-->		
+<script src="http://img.eeo.com.cn/pc/js/logon.js" type="text/javascript" charset="utf-8"></script><!--引用判断 以及效果-->
+<script type="text/javascript" src="http://img.eeo.com.cn/js/config.js"></script><!--定义url-->
+<script type="text/javascript" src="http://img.eeo.com.cn/js/lib/jquery.cookie.js"></script> <!--定义cookie.js-->
+<script type="text/javascript">
+	/**$(".listTitle").click(function(){
+		$(".listTitle").removeClass("xd-a1");
+		$(this).addClass("xd-a1-1");
+	})
+	$(".xd-span-xd").mouseover(function(){ 
+		$(".xd-ol-xd").show();
+		return false;
+	}).mouseout(function(){ 
+		$(".xd-ol-xd").hide();
+	});**/
+	
+	
+	
+
+</script>
+<!-- header_top 部分 -->
+<script type="text/javascript">
+	
+
+		$(function(){
+					$('.xd-a-left').click(function(){
+						$(".thiszihao-box-add").slideToggle();   
+					})  
+					 
+					$(".thiszihao-box-add p").click(function(){
+						var thisEle = $(".xd-nr p").css("font-size");  
+						var textFontSize = parseFloat(thisEle , 10);
+						var unit = thisEle.slice(-2); 
+						var cName = $(this).attr("class");
+						if(cName == "thiszihao-jia"){ 
+								textFontSize += 2;
+						}else if(cName == "thiszihao-jian"){
+								textFontSize -= 2;
+						} 
+						$(".xd-nr p").css("font-size",  textFontSize + unit );
+					})
+				})	
+				</script>
+			
+	<div class="xd-bottom">
+			<div class="xd-bottom-jz">
+				<div class="xd-b-left">
+					<div class="xd-b-b">
+						<div class="thiszihao-box-add" style="display: none;">
+					                	<p class="thiszihao-jia">+</p>
+					                    <p class="thiszihao-jian">-</p>
+				        </div>
+						<h1>社论 | 抗癌进口药零关税，谁将成为中国新一轮开放的获益者？</h1>
+						<p>社论<span>2018-04-14 12:13</span>
+							<a href="javascript:" class="xd-a-left">
+								<img src="http://img.eeo.com.cn/pc/images/xd-smg.png" alt="" />
+							</a>
+							
+							<a href="javascript:" class="right_ewm">
+								<img class="right_ewm_icon" width="28" height="auto" src="http://img.eeo.com.cn/pc/images/icon_ewm.png" alt="" />
+								<span style="display:none;"><img src="http://upload.eeo.com.cn/erweima/article/326585.png" width="150"height="150"></span>
+							</a>
+							<script>
+							$('.right_ewm_icon').click(function(){
+								$(this).siblings('span').stop(true,true).slideToggle();
+							})
+							</script>
+						</p>
+						<div class="cls"></div>
+					</div>
+					<div class="xd-nr">
+						
+						<div class="xd-xd-xd-newsimg"><img src="http://upload.eeo.com.cn/2018/0413/thumb_650_305_1523629741313.jpg"></div>                                                  <div class="xd-xd-xd-rwm" style="display:none;">
+							<img src="http://upload.eeo.com.cn/erweima/article/326585.png" width="150" height="150"> <br>
+							扫描二维码分享到朋友圈
+						</div>
+						<div class="xx_boxsing"><p style="text-align: right;">（图片来源：全景视觉）</p>
+<p><strong>经济观察报 社论</strong>&nbsp;<span style="text-indent: 2em;">抗癌药进口零关税。国务院常务会议12日的这项决定，会让多少有癌症患者的家庭受益？要算清楚这笔账并不容易，因为决定药价的不仅是关税，还包括流通成本等诸多因素。即使如此，我们还是能看到，门稍微开大些就会惠及普通百姓&mdash;&mdash;之前我们见闻多少&ldquo;天价药&rdquo;下的扭曲，海外代购的顽强即是一例。当然在国内制药企业眼中，这意味着强度更大的竞争。不过我们要说，对于正在寻求转型升级的中国企业来说，有强劲的对手在身边并非坏事。</span></p>
+<p>此时，中国国家主席习近平&ldquo;中国开放的大门不会关闭，只会越开越大&rdquo;的表述言犹在耳。4月10日，他在博鳌亚洲论坛年会开幕式上发表主旨演讲，宣布在扩大开放方面，中国将采取四方面的重大举措，包括大幅度放宽市场准入、创造更有吸引力的投资环境、加强知识产权保护和主动扩大进口。我们可以从对外的角度去理解，就此而言，外资当然是受益者&mdash;&mdash;他们有机会在中国获得更多的投资机会，他们可以在更友好的营商环境中兴业投资，分享中国经济成长的红利，他们的创新成果在中国会得到更好的保护，他们也可以卖更多产品给中国消费者。</p>
+<p>如果仅仅从这个角度衡量，很容易将这些举措看做压力之下的选择&mdash;&mdash;这当然并无根据。这些举措有益于外资和全世界的投资者，不过再清楚不过，做出这些决策的出发点，首先是有益于选择开放的这个国家和它的全体国民&mdash;&mdash;中国企业需要开放的市场，期待更好的营商环境，中国企业对知识产权保护的诉求一点也不比外资少，至于扩大进口，即以抗癌药零关税为例，包括一并确定的对创新药的知识产权保护政策，要旨在于&ldquo;减轻广大患者特别是癌症患者负担并有更多用药选择&rdquo;&mdash;&mdash;而在中国患者受益的同时，外资药企当然也是受益者。这是我们理解的开放逻辑。</p>
+<p>消费者应该享有更多的选择权利。这种选择权的背面是产品和服务提供商的竞争。享受开放的好处，就要承担开放带来的变革。开放意味着全球化的竞争毫无遮拦地出现在国内市场，这一幕在中国加入世贸组织的十多年中反复重演，只不过这一次是药企&mdash;&mdash;当然更值得关注的是金融业。中国的WTO故事告诉我们，那些无法抵御市场洗礼的企业必然会被淘汰，但在这个过程中，一定会有世界级的中国企业在市场的硝烟和战火中诞生。我们一直期待着这样的时刻在更多领域出现。现在是时候了。</p>
+<p>在这个意义上，开放从来都不只是对外的，当我们希望国内企业经得起竞争的锤炼并变得强大时，首先要做的是帮助他们挣脱束缚。这可以解释，为何中国加入WTO之初，人们讨论更多的话题是对外开放倒逼对内开放，甚而主张对外资开放的领域率先对内资特别是民资开放。一批中国民企在这样的呼唤中成长，一些行业领跑者由此诞生。我们以为，这样的开放观念同样适用于新一轮扩大开放的进程。今天民营企业对GDP的贡献超过60%，对新增就业超过80%，企业技术创新和新产品占比超过70%，但毋庸讳言，民资仍然面对&ldquo;玻璃门&rdquo;和&ldquo;弹簧门&rdquo;的阻隔，打破垄断行在途中，也还需要强力推动。</p>
+<p>以开放促改革、促发展，是中国改革发展的成功实践。与扩大开放相生相伴的会是新一轮思想解放和改革深化。我们将1978年至今的40年改革开放，称作&ldquo;第二次革命&rdquo;。而当进入新时代，中国已经是世界第二大经济体，第一大货物贸易国，中国年均贡献了全球经济增长的30%以上。在今天这样一个贸易保护声浪日高的世界中，中国开始成为全球化的积极推动者。与过去相比，改革开放已经有了全新的命题，也正在寻求深度突破，但说到底，提升百姓的获得感和福祉，满足人民对美好生活的向往，始终是改革开放的出发点和落脚点，改革开放也因此赢得更广泛的共识和合力。这是纪念改革开放四十周年应有的认知。就此而言，我们当可理解，在&ldquo;尽快使之落地，宜早不宜迟，宜快不宜慢&rdquo;的表述中，领导者传递的对新一轮开放的紧迫感。</p></div>
+
+
+<!-----------------------------二维码---------------------------------------->
+<div style="width:100%;padding-top:50px">
+<img src="http://img.eeo.com.cn/pc/images/pc-ewm2.jpg" style="width:100%">
+</div>
+<!----------------------------------------------------------------------->
+
+<!-----------------------------记者---------------------------------------->
+							<div class="xd_zuozheinfo">
+														<div class="zz_img"><a href="http://space.eeo.com.cn/shelun"><img src="http://upload.eeo.com.cn/uploadfiles/author/1247457095113.jpg" /></a></div>							<div class="xd_jz_author">
+								<div class="zuozhe"><a href="http://space.eeo.com.cn/shelun">社论<span>经济观察报特约撰稿人</span></a></div>
+								<div class="jianjie"></div>
+								<div class="dingyue"><a href="javascript:guanzhuspace(413)" class="xd-xd-xd-dy"><img src="http://img.eeo.com.cn/pc/images/xd-dingyue.png" alt="" />订阅</a></div>
+							</div>
+						 
+
+						</div>
+			
+<!----------------------------------------------------------------------->
+						<div class="xd-lj">
+							<div id="xd-lj_share" style="display: inline-block; position: relative;" class="xd-span-a"><img src="http://img.eeo.com.cn/pc/images/xd-fx.png" /><span>分享</span>
+							<!--<div class="xd-fx">
+								<div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+							</div>-->
+							 <div class="bshare-custom"><a title="分享到新浪微博" class="bshare-sinaminiblog">新浪微博</a><a title="分享到腾讯微博" class="bshare-qqmb">腾讯微博</a><a title="分享到微信" class="bshare-weixin">微信</a><a title="分享到朋友网" class="bshare-qqxiaoyou">朋友网</a><a title="分享到人人网" class="bshare-renren">人人网</a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+							
+							</div>
+							<a href="#SOHUCS"><img src="http://img.eeo.com.cn/pc/images/xd-pl.png" alt="" /><br />评论</a>
+							<a href="javascript:addFavorite();" target="_self"><img src="http://img.eeo.com.cn/pc/images/xd-ss.png" alt="" /><br />收藏</a>
+							<div class="cls" style="clear: both;"></div>
+						</div>
+						
+						<div id="SOHUCS" sid="326585"></div>
+						
+						<div class="xd-gg">
+							<a href="#"><img src="http://img.eeo.com.cn/pc/images/xd-gg.png" /></a>
+						</div>
+						
+						<style>
+							.xd-lj .bshare-custom{
+								position: absolute;
+								right: 0px;
+								top:60px;
+								width:100px;
+								background:rgba(00,00,00,.4);
+								color: #fff;
+								z-index: 9999; 
+								display: none;
+							}
+							.xd-lj .bshare-custom a{
+								display: block!important;
+								float: none!important;
+								color:#fff!important;
+								margin: 10px!important;
+								padding: 0!important;
+								height: 16px!important;
+								overflow: hidden!important;
+								font-size: 12px!important;
+								padding-left: 24px!important;
+   								text-align: left!important;
+							}
+						</style>
+						
+						
+						<script>
+							$(function(){
+								$('#xd-lj_share').mouseenter(function(){
+									$(this).find('.bshare-custom').show();
+								})
+								$('#xd-lj_share').mouseleave(function(){
+									$(this).find('.bshare-custom').hide();
+								})
+							})
+						</script>
+						
+					</div>
+
+				</div>
+				
+
+<script>  
+  (function(){
+    var appid = 'cyr7LVDaA',
+    conf = 'prod_731f9cd690d0b31e36353cb70553f541';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+    window.SCS_NO_IFRAME = true;
+  })()
+
+</script> 				
+				
+				
+				
+<div class="xd-b-right">
+	<!--2018/4/2 删除“你可能还想看”栏目html-->
+					<!--<h1>你可能还想看</h1>
+					<div class="xd-sp" style="margin-top: 0px;border-top: 0px solid #ccc;padding-top: 0px;border-bottom:1px solid #ccc;">
+						<div class="svideo_tj" id="svideo_tj" style="background: #f0f0f0;">
+						</div>
+					</div>-->
+					<h1 style="margin-top: 10px;">热新闻</h1>
+<ul>
+ 				<li >
+					<a href="http://www.eeo.com.cn/2018/0415/326713.shtml" target="_blank" title="美英法打击叙利亚之后，石油价格会疯涨吗？">美英法打击叙利亚之后，石油价格会疯涨吗？ </a>
+				</li>
+
+								<li >
+					<a href="http://www.eeo.com.cn/2018/0416/326750.shtml" target="_blank" title="进口煤“限制令”再升级，中国一类口岸开启煤炭进口限制">进口煤“限制令”再升级，中国一类口岸开启 </a>
+				</li>
+
+								<li >
+					<a href="http://www.eeo.com.cn/2018/0415/326707.shtml" target="_blank" title="暴风改变三驾马车业务布局 冯鑫：“电视、电视，还是电视！”">暴风改变三驾马车业务布局 冯鑫：“电视、 </a>
+				</li>
+
+								<li >
+					<a href="http://www.eeo.com.cn/2018/0414/326698.shtml" target="_blank" title="钢铁规范企业减至256家 专家：加强行业监管和产能约束">钢铁规范企业减至256家 专家：加强行业监管 </a>
+				</li>
+
+								<li >
+					<a href="http://www.eeo.com.cn/2018/0415/326711.shtml" target="_blank" title="原国企女董事长被控非法收受天津顺驰等企业负责人财物">原国企女董事长被控非法收受天津顺驰等企业 </a>
+				</li>
+
+								<li >
+					<a href="http://www.eeo.com.cn/2018/0416/326734.shtml" target="_blank" title="祝宝良：预计一季度中国GDP增长6.9% 经济运行面临三大问题和风险">祝宝良：预计一季度中国GDP增长6.9% 经济运 </a>
+				</li>
+
+								<li >
+					<a href="http://www.eeo.com.cn/2018/0415/326701.shtml" target="_blank" title="不用去香港，以后去海南也可以玩“马彩”了">不用去香港，以后去海南也可以玩“马彩”了 </a>
+				</li>
+
+								<li >
+					<a href="http://www.eeo.com.cn/2018/0415/326705.shtml" target="_blank" title="高净值人士为何选择海外生活，这几张图告诉你">高净值人士为何选择海外生活，这几张图告诉 </a>
+				</li>
+
+								<li >
+					<a href="http://www.eeo.com.cn/2018/0414/326697.shtml" target="_blank" title="三亚旅游响应自贸区新政 进一步鼓励外资进入并优化免税政策">三亚旅游响应自贸区新政 进一步鼓励外资进 </a>
+				</li>
+
+								<li >
+					<a href="http://www.eeo.com.cn/2018/0416/326752.shtml" target="_blank" title="京东要日开千家线下便利店 各大电商线下“圈地”">京东要日开千家线下便利店 各大电商线下“ </a>
+				</li>
+
+				</ul>		
+					<div class="xd-div" style="display: none;">
+						<ul>
+
+					   
+<li class="xd-a-c" ><a href="http://www.eeo.com.cn/2018/0417/326776.shtml" target="_blank" title="周鸿祎眼中的“战友、朋友或亲人”、CFO姚钰：360回A股后选择离去">1、周鸿祎眼中的“战友、朋友或亲人”   </a></li>
+   
+   
+<li class="xd-a-c" ><a href="http://www.eeo.com.cn/2018/0417/326774.shtml" target="_blank" title="刚挂牌就出重拳 生态环境部全面清查重型柴油货车排放造假设备">2、刚挂牌就出重拳 生态环境部全面清   </a></li>
+   
+   
+<li class="xd-a-c" ><a href="http://www.eeo.com.cn/2018/0416/326773.shtml" target="_blank" title="ETCP董事长谭龙：停车场空间变身未来汽车服务场景">3、ETCP董事长谭龙：停车场空间变身未   </a></li>
+   
+   
+<li ><a href="http://www.eeo.com.cn/2018/0416/326772.shtml" target="_blank" title="投融资额一年翻两倍 曾小军详解高特佳投资打法">4、投融资额一年翻两倍 曾小军详解高   </a></li>
+   
+   
+<li ><a href="http://www.eeo.com.cn/2018/0416/326770.shtml" target="_blank" title="项俊波涉嫌受贿 被江苏检察院提起公诉">5、项俊波涉嫌受贿 被江苏检察院提起   </a></li>
+   
+   
+<li ><a href="http://www.eeo.com.cn/2018/0416/326768.shtml" target="_blank" title="沪指3100点关口大考 海南板块 “吸金” 概念股纷纷涨停">6、沪指3100点关口大考 海南板块 “吸   </a></li>
+   
+   
+<li ><a href="http://www.eeo.com.cn/2018/0416/326766.shtml" target="_blank" title="北大黉门对话：编纂民法典需适应21世纪混合性经济">7、北大黉门对话：编纂民法典需适应21   </a></li>
+   
+   
+<li ><a href="http://www.eeo.com.cn/2018/0416/326764.shtml" target="_blank" title="工银国际首席经济学家程实：港币贬值不是危险信号">8、工银国际首席经济学家程实：港币贬   </a></li>
+   
+   
+<li ><a href="http://www.eeo.com.cn/2018/0416/326761.shtml" target="_blank" title="CDR：中国资本市场改革的缩影">9、CDR：中国资本市场改革的缩影   </a></li>
+   
+   
+<li ><a href="http://www.eeo.com.cn/2018/0416/326760.shtml" target="_blank" title="产能过剩、巨头挤压 中小型游戏企业如何突围？">10、产能过剩、巨头挤压 中小型游戏企   </a></li>
+   
+ 
+						</ul>
+					</div>
+					
+						
+					<div class="xd-sp">
+						<h1>
+							视频推荐
+						</h1>
+						<div>
+	<div class="svideo_tj">
+<a href="http://www.eeo.com.cn/2018/0412/326485.shtml" target="_blank"><h5><img width="310px" height="168px" src="http://upload.eeo.com.cn/2018/0412/1523505378763.jpg" /><span id="bossplay-big-span"></span></h5><p class="xd-p-p-0">【BOSS说】瑞尔集团董事长邹其芳：我们预期口腔医疗市场很快会出现供不应求的局面</p></a>
+<a href="http://www.eeo.com.cn/2018/0404/325965.shtml" target="_blank" class="xd-sp-a"><h5><img width="143px" height="107px" src="http://upload.eeo.com.cn/2018/0404/1522816034488.jpg" /><span id="bossplay-min-span"></span></h5><p class="xd-p-p-0" style="padding: 0 10px;">【BOSS说】央视导演田梅谈《经典咏流传》刷屏背后：我们做的所有东西都要寻找传递的价值观</p></a>
+<a href="http://www.eeo.com.cn/2018/0328/325468.shtml" target="_blank" class="xd-sp-a"><h5><img width="143px" height="107px" src="http://upload.eeo.com.cn/2018/0328/1522217201766.jpg" /><span id="bossplay-min-span"></span></h5><p class="xd-p-p-0" style="padding: 0 10px;">【BOSS说】金融年会特别节目：强化金融信用 捍卫金融安全</p></a>
+	
+</div>	
+							
+						</div>
+					</div>
+
+					<!--<div class="xd-guanggao">
+						<img src="http://img.eeo.com.cn/pc/images/xd-guanggao.png" alt="" />
+					</div>-->
+ 
+					<div class="xd-dz xd-dz-dz-dz">
+						<h1>电子刊物</h1>
+						<div>
+	<img width="240px" height="403px" src="http://upload.eeo.com.cn/2016/0827/1472235103122.jpg" alt="" />
+</div>
+<div>
+	<a href="http://www.eeo.com.cn/epaper/eeocover/jjgcb/" target="_blank">点击进入</a>
+</div>
+
+
+					</div>
+				</div>
+	
+			<em class="xd-c"></em>
+			</div>
+		
+		</div>
+		
+<div class="xd-bottom-list">
+			<div class="xd-bottom-l">
+			<div class="xd-logo-a-logo"><img src="http://img.eeo.com.cn/pc/images/xd-logo-a.png" alt="" /></div>
+			<ul>
+				<li>地址：北京理工大学国防科技园2号楼4层</li>
+				<li>邮编：100011 电话：4001560066 传真：86-10-52271322</li>
+				<li>Copyright @ 经济观察网 2001-2018</li>
+				<li>鲁新网备案号：201000109 
+						<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010102001006" style="display:inline-block;text-decoration:none;height:20px;line-height:26px;"> 
+						<img src="http://img.eeo.com.cn/pc/images/gadh.png" style="float:left;margin-right:0px;padding:0; margin-left: 5px;"/>
+						<p style="float:left;height:20px;line-height:26px;margin: 0px 0px 0px 5px; color:#fff;">京公网安备 11010102001006号</p>
+						</a> 
+				</li>
+			</ul>
+			<ul>
+				<li><a href="http://app.eeo.com.cn/?app=article&controller=bottomLink&action=banquan">版权声明 Copyright</a></li>
+				<li><a href="http://app.eeo.com.cn/?app=article&controller=bottomLink&action=lianxi">联系我们 Contact Us</a></li>
+				<li><a href="http://app.eeo.com.cn/?app=article&controller=bottomLink&action=aboutus">关于我们 About Us</a></li>
+				<li><a href="http://www.eeo.com.cn/friendlink/">友情链接 Links</a></li>
+		<!--	<li><a href="http://app.eeo.com.cn/?app=article&controller=bottomLink&action=daohang">网站导航 Site Map</a></li>-->
+			</ul>
+			<ul style="border: 0">
+				<li><a href="http://app.eeo.com.cn/?app=article&controller=bottomLink&action=job">经观招聘 EEO Jobs</a></li>
+				<li><a href="http://app.eeo.com.cn/?app=memberpay&controller=index&action=eeoepaper">订购中心 Subscribe</a></li>
+				<li><a href="http://app.eeo.com.cn/?app=article&controller=bottomLink&action=published">广告刊例 Advertising</a></li>
+			</ul>
+			<em class="xd-c"></em>
+		</div>
+		</div>
+	<!--你可能还想看 栏目调用-->	
+	
+<script type="text/javascript">
+	// 2018/4/2 删除“你可能还想看”栏目js
+		/*$.getJSON('http://uluai.com.cn/rcmd/getRtCmd?siteId=5019&itemId=326585&callback=?', function(data) {
+				var html = '';
+				var i=0;
+				$.each(data, function(index,val){
+					if(i>5){
+						return false;
+					}
+					if(val.url.replace(/\s/g, '').length > 0 && val.pic.replace(/\s/g, '').length > 0 && val.title.replace(/\s/g, '').length > 0) {
+						html += '<a href=' + val.url + ' target="_blank" class="xd-sp-a">' + '<h5>' + '<img src=' + val.pic + ' height="107px" width="143px"/>' + '</h5>' + '<p class="xd-p-p-0 bt_bt">' + val.title + '</p>' + '</a>';
+						i++;
+					}
+				});
+				$('#svideo_tj').append(html);
+				$(".bt_bt").dotdotdot();
+
+			});*/
+			
+</script>		
+		
+<script>
+
+function guanzhuspace(data){
+			var data = data;
+			
+			$.getJSON('http://app.eeo.com.cn/?app=hfive&controller=hfive&action=guanzhuspace&jsoncallback=?&id='+data+'&jt=1', function(data){
+					if(data.status == 1){
+					alert(data.msg);
+						location.reload() ;
+					}else if(data.status == 2){
+					if(confirm('请登录后再订阅'))
+						{
+							window.location.href="http://app.eeo.com.cn/?app=member&controller=index&action=login";
+						}
+					}else{
+					alert(data.msg);
+					}
+					
+					}) 
+		}
+
+$(function(){
+	
+	
+	$('#pinglun').focus(function(){
+			$('.bottom-pl').show();	
+	})
+	
+})
+
+ var elm = $('.xd-list'); 
+	    var startPos = $(elm).offset().top; 
+	    $.event.add(window, "scroll", function() { 
+	        var p = $(window).scrollTop(); 
+	        $(elm).css('position',((p) > startPos) ? 'fixed' : 'static'); 
+	        $(elm).css('top',((p) > startPos) ? '0px' : ''); 
+	    });
+
+
+
+</script>  		
+            <!--增加文章点击量-->
+            <script type="text/javascript">
+            var contentid = 326585;	
+            $.getJSON(APP_URL+'?app=system&controller=content&action=stat&jsoncallback=?&contentid='+contentid);
+            </script>         
+            <!--增加文章点击量-->		
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_30018686'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30018686' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260259364'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D1260259364' type='text/javascript'%3E%3C/script%3E"));</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2e8813742d88ca74e2db963df5aeba72";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-57P6LB');</script>
+<script type="text/javascript">
+        document.write('<a style="display:none!important" id="tanx-a-mm_72880150_15016456_58356126"></a >');
+        tanx_s = document.createElement("script");
+        tanx_s.type = "text/javascript";
+        tanx_s.charset = "gbk";
+        tanx_s.id = "tanx-s-mm_72880150_15016456_58356126";
+        tanx_s.async = true;
+        tanx_s.src = "http://p.tanx.com/ex?i=mm_72880150_15016456_58356126";
+        tanx_h = document.getElementsByTagName("head")[0];
+        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+</script>
+<script src="//a.teads.tv/page/32222/tag" async="true"></script>
+		
+		
+		
+		
+	
