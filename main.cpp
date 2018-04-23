@@ -6,13 +6,11 @@
  * */
  //git test
 /*
- initialize ssh pub key :https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-linux
-
- Start the ssh-agent in the background : eval "$(ssh-agent -s)"
-
- ssh git passphrase: forgit
-
-git clone git@github.com:GraceYongqi/bishe_test.git
+ *  initialize ssh pub key :https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-linux
+ *   Start the ssh-agent in the background : eval "$(ssh-agent -s)"
+ *   ssh git passphrase: forgit
+ *   git clone git@github.com:GraceYongqi/bishe_test.git
+ *
 */
 
 
