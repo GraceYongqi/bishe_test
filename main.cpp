@@ -56,7 +56,7 @@ int main(int argc, char const *argv[])
     char * BodyTag = FindTagByReg(doc_for_body , pattern);
 //    cout << "match tag " << BodyTag << endl;
     char * bodyres = StringCut(doc , BodyTag , "</body>") ;
-    resfile << "body" << '\t' << bodyres << endl;
+//    resfile << "body" << '\t' << bodyres << endl;
 
 //    you need all strings surrounded by script tags  return array of char *
 //    vector<char *> ScriptTags = FindMultiTagByReg(bodyres , "<scipt*</script>");

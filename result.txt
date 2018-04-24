@@ -2,23 +2,9 @@ title	社论 | 抗癌进口药零关税，谁将成为中国新一轮开放的获益者？ - 经济观察网 － 
 keywords	
 description	抗癌药进口零关税意味着强度更大的竞争。不过我们要说，对于正在寻求转型升级的中国企业来说，有强劲的对手在身边并非坏事。
 author	经济观察网 
-body		
+body after dele <script> 		
 <!-- top -->
-<!--<script>
-//判断是否为移动端，跳转移动端页面;
-function IsPC(){  
-   var userAgentInfo = navigator.userAgent;  
-   var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
-   var flag = true;  1
-   for (var v = 0; v < Agents.length; v++) {  
-	   if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
-   }  
-   return flag;  
-}  
-if(!IsPC()){
-	window.location.href="http://m.eeo.com.cn";
-} 
-</script>-->
+<!---->
 
 <!--Link array-->
 <div class="xd-logo">
@@ -158,48 +144,12 @@ if(!IsPC()){
 </div>
 <div class="overlay" style=" display: none;"></div>
  <!--登录机制修改 2016.10.24 end-->		
-<script src="http://img.eeo.com.cn/pc/js/logon.js" type="text/javascript" charset="utf-8"></script><!--引用判断 以及效果-->
-<script type="text/javascript" src="http://img.eeo.com.cn/js/config.js"></script><!--定义url-->
-<script type="text/javascript" src="http://img.eeo.com.cn/js/lib/jquery.cookie.js"></script> <!--定义cookie.js-->
-<script type="text/javascript">
-	/**$(".listTitle").click(function(){
-		$(".listTitle").removeClass("xd-a1");
-		$(this).addClass("xd-a1-1");
-	})
-	$(".xd-span-xd").mouseover(function(){ 
-		$(".xd-ol-xd").show();
-		return false;
-	}).mouseout(function(){ 
-		$(".xd-ol-xd").hide();
-	});**/
-	
-	
-	
+<!--引用判断 以及效果-->
+<!--定义url-->
+ <!--定义cookie.js-->
 
-</script>
 <!-- header_top 部分 -->
-<script type="text/javascript">
-	
 
-		$(function(){
-					$('.xd-a-left').click(function(){
-						$(".thiszihao-box-add").slideToggle();   
-					})  
-					 
-					$(".thiszihao-box-add p").click(function(){
-						var thisEle = $(".xd-nr p").css("font-size");  
-						var textFontSize = parseFloat(thisEle , 10);
-						var unit = thisEle.slice(-2); 
-						var cName = $(this).attr("class");
-						if(cName == "thiszihao-jia"){ 
-								textFontSize += 2;
-						}else if(cName == "thiszihao-jian"){
-								textFontSize -= 2;
-						} 
-						$(".xd-nr p").css("font-size",  textFontSize + unit );
-					})
-				})	
-				</script>
 			
 	<div class="xd-bottom">
 			<div class="xd-bottom-jz">
@@ -219,11 +169,7 @@ if(!IsPC()){
 								<img class="right_ewm_icon" width="28" height="auto" src="http://img.eeo.com.cn/pc/images/icon_ewm.png" alt="" />
 								<span style="display:none;"><img src="http://upload.eeo.com.cn/erweima/article/326585.png" width="150"height="150"></span>
 							</a>
-							<script>
-							$('.right_ewm_icon').click(function(){
-								$(this).siblings('span').stop(true,true).slideToggle();
-							})
-							</script>
+							
 						</p>
 						<div class="cls"></div>
 					</div>
@@ -263,9 +209,9 @@ if(!IsPC()){
 						<div class="xd-lj">
 							<div id="xd-lj_share" style="display: inline-block; position: relative;" class="xd-span-a"><img src="http://img.eeo.com.cn/pc/images/xd-fx.png" /><span>分享</span>
 							<!--<div class="xd-fx">
-								<div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+								<div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div>
 							</div>-->
-							 <div class="bshare-custom"><a title="分享到新浪微博" class="bshare-sinaminiblog">新浪微博</a><a title="分享到腾讯微博" class="bshare-qqmb">腾讯微博</a><a title="分享到微信" class="bshare-weixin">微信</a><a title="分享到朋友网" class="bshare-qqxiaoyou">朋友网</a><a title="分享到人人网" class="bshare-renren">人人网</a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+							 <div class="bshare-custom"><a title="分享到新浪微博" class="bshare-sinaminiblog">新浪微博</a><a title="分享到腾讯微博" class="bshare-qqmb">腾讯微博</a><a title="分享到微信" class="bshare-weixin">微信</a><a title="分享到朋友网" class="bshare-qqxiaoyou">朋友网</a><a title="分享到人人网" class="bshare-renren">人人网</a></div>
 							
 							</div>
 							<a href="#SOHUCS"><img src="http://img.eeo.com.cn/pc/images/xd-pl.png" alt="" /><br />评论</a>
@@ -305,37 +251,14 @@ if(!IsPC()){
 						</style>
 						
 						
-						<script>
-							$(function(){
-								$('#xd-lj_share').mouseenter(function(){
-									$(this).find('.bshare-custom').show();
-								})
-								$('#xd-lj_share').mouseleave(function(){
-									$(this).find('.bshare-custom').hide();
-								})
-							})
-						</script>
+						
 						
 					</div>
 
 				</div>
 				
 
-<script>  
-  (function(){
-    var appid = 'cyr7LVDaA',
-    conf = 'prod_731f9cd690d0b31e36353cb70553f541';
-    var doc = document,
-    s = doc.createElement('script'),
-    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
-    s.type = 'text/javascript';
-    s.charset = 'utf-8';
-    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
-    h.insertBefore(s,h.firstChild);
-    window.SCS_NO_IFRAME = true;
-  })()
-
-</script> 				
+ 				
 				
 				
 				
@@ -495,102 +418,18 @@ if(!IsPC()){
 		</div>
 	<!--你可能还想看 栏目调用-->	
 	
-<script type="text/javascript">
-	// 2018/4/2 删除“你可能还想看”栏目js
-		/*$.getJSON('http://uluai.com.cn/rcmd/getRtCmd?siteId=5019&itemId=326585&callback=?', function(data) {
-				var html = '';
-				var i=0;
-				$.each(data, function(index,val){
-					if(i>5){
-						return false;
-					}
-					if(val.url.replace(/\s/g, '').length > 0 && val.pic.replace(/\s/g, '').length > 0 && val.title.replace(/\s/g, '').length > 0) {
-						html += '<a href=' + val.url + ' target="_blank" class="xd-sp-a">' + '<h5>' + '<img src=' + val.pic + ' height="107px" width="143px"/>' + '</h5>' + '<p class="xd-p-p-0 bt_bt">' + val.title + '</p>' + '</a>';
-						i++;
-					}
-				});
-				$('#svideo_tj').append(html);
-				$(".bt_bt").dotdotdot();
-
-			});*/
-			
-</script>		
 		
-<script>
-
-function guanzhuspace(data){
-			var data = data;
-			
-			$.getJSON('http://app.eeo.com.cn/?app=hfive&controller=hfive&action=guanzhuspace&jsoncallback=?&id='+data+'&jt=1', function(data){
-					if(data.status == 1){
-					alert(data.msg);
-						location.reload() ;
-					}else if(data.status == 2){
-					if(confirm('请登录后再订阅'))
-						{
-							window.location.href="http://app.eeo.com.cn/?app=member&controller=index&action=login";
-						}
-					}else{
-					alert(data.msg);
-					}
-					
-					}) 
-		}
-
-$(function(){
-	
-	
-	$('#pinglun').focus(function(){
-			$('.bottom-pl').show();	
-	})
-	
-})
-
- var elm = $('.xd-list'); 
-	    var startPos = $(elm).offset().top; 
-	    $.event.add(window, "scroll", function() { 
-	        var p = $(window).scrollTop(); 
-	        $(elm).css('position',((p) > startPos) ? 'fixed' : 'static'); 
-	        $(elm).css('top',((p) > startPos) ? '0px' : ''); 
-	    });
-
-
-
-</script>  		
+		
+  		
             <!--增加文章点击量-->
-            <script type="text/javascript">
-            var contentid = 326585;	
-            $.getJSON(APP_URL+'?app=system&controller=content&action=stat&jsoncallback=?&contentid='+contentid);
-            </script>         
+                     
             <!--增加文章点击量-->		
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_30018686'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30018686' type='text/javascript'%3E%3C/script%3E"));</script>
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260259364'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D1260259364' type='text/javascript'%3E%3C/script%3E"));</script>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?2e8813742d88ca74e2db963df5aeba72";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-57P6LB');</script>
-<script type="text/javascript">
-        document.write('<a style="display:none!important" id="tanx-a-mm_72880150_15016456_58356126"></a >');
-        tanx_s = document.createElement("script");
-        tanx_s.type = "text/javascript";
-        tanx_s.charset = "gbk";
-        tanx_s.id = "tanx-s-mm_72880150_15016456_58356126";
-        tanx_s.async = true;
-        tanx_s.src = "http://p.tanx.com/ex?i=mm_72880150_15016456_58356126";
-        tanx_h = document.getElementsByTagName("head")[0];
-        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
-</script>
-<script src="//a.teads.tv/page/32222/tag" async="true"></script>
+
+
+
+
+
+
 		
 		
 		

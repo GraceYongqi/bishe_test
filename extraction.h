@@ -16,7 +16,7 @@
 #include <assert.h>
 #include <boost/regex.hpp>
 
-#define  EXIT_SUCCESS 0 ;
+//#define  EXIT_SUCCESS 0 ;
 
 using namespace std;
 

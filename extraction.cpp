@@ -64,7 +64,7 @@ vector<char *>FindMultiTagByReg(char * raw ,  char * pattern ){
     while(regex_search(start, end, what, e1, flags))
     {
         string temp = string(what[0].first,what[0].second) ;
-        char *tmp = temp.data();
+        char *tmp = (char *)temp.data();
         MultiTag.push_back(tmp) ;
         cout << "match: " << string(what[0].first,what[0].second) << endl;
         start = what[0].second;
@@ -81,8 +81,8 @@ char * DeleteByReg(char * raw , char * pattern){
     std::string fmt("");
     std::string number(raw);
 //    std::cout << regex_replace(number, r, fmt) << std::endl;
-    string temp =  regex_replace(number, r, fmt) << std::endl;
-    raw = temp.data();
+    string temp =  regex_replace(number, r, fmt);
+    raw = (char *)temp.data();
     return raw ;
 }
 
