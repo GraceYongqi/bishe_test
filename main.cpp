@@ -28,7 +28,7 @@ int main(int argc, char const *argv[])
     resfile.open("result.txt");
 //    read html file
     ifstream fin;
-    fin.open("test.txt");
+    fin.open("2.txt");
     const char * doc;
 //    txt -> string
 //    doc is const value === htmlfile
@@ -91,16 +91,17 @@ int main(int argc, char const *argv[])
 //    char * BodyTag = FindSingleByPattern((char *)doc , "<body.*?>") ;
     string BodyTag = FindSingleByPattern(contents , "<body.*?>");
 //    cout << "match tag " << BodyTag << endl;
-//    char * bodyres = FindSingleByPattern((char *)doc,"(?<="BodyTag").*?(?=</body>");
-    string bodyres = FindSingleByPattern(contents , "(?<="+BodyTag+").*?(?=</body>" );
+//    char * bodyres = FindSingleByPattern((char *)doc,"(?<="BodyTag").*?(?=</body>)");
+    string bodyres = FindSingleByPattern(contents , "(?<="+BodyTag+").*?(?=</body>)" );
 //    resfile << "body" << '\t' << bodyres << endl;
 
 
 //    step 3 delete unneccessary tags and get target text
 //    maybe you should save all unneccessary tags into a vector , delete them by traversing the vector ---- to be optimized
 //    three kinds of tags : comments tag ; special character ; html content tag
-//    char * commentres = DeleteByReg(bodyres,"<!--.*?-->|/\*.*?\*/");
-    string commentres = DeleteByReg(bodyres , "<!--.*?-->|/\*.*?\*/" );
+//    char * commentres = DeleteByReg(bodyres,"<!--.*?-->|\/\*.*?\*\/");
+    string commentres = DeleteByReg(bodyres , "<!--.*?-->|/\\*.*?\\*/" );
+
 //    char * contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
     string contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
     resfile << "body after dele <script> " << '\t' << contentres << endl;

@@ -71,7 +71,7 @@ vector<string>FindMultiByPattern(string raw ,  string pattern ){
 //        char *tmp = (char *)temp.data();
 //        Multi.push_back(tmp) ;
         Multi.push_back(temp) ;
-        cout << "match: " << string(what[0].first,what[0].second) << endl;
+        //cout << "match: " << string(what[0].first,what[0].second) << endl;
         start = what[0].second;
     }
 
@@ -104,7 +104,7 @@ string FindSingleByPattern(string raw , string pattern){
 //        char *tmp = (char *)temp.data();
 //        Single = tmp ;
         Single = temp ;
-        cout << "match: " << string(what[0].first,what[0].second) << endl;
+//        cout << "match: " << string(what[0].first,what[0].second) << endl;
 //        start = what[0].second;
     }
     return Single ;
