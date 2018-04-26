@@ -50,8 +50,8 @@ char * FindTagByReg(char *raw, char *pattern){
     return outdata;
 }
 
-vector<char *>FindMultiTagByReg(char * raw ,  char * pattern ){
-    vector<char *>MultiTag ;
+vector<char *>FindMultiByPattern(char * raw ,  char * pattern ){
+    vector<char *>Multi ;
 
     string str(raw);
     boost::regex e1(pattern);
@@ -61,27 +61,56 @@ vector<char *>FindMultiTagByReg(char * raw ,  char * pattern ){
     end = str.end();
     boost::match_results<std::string::const_iterator> what;
     boost::match_flag_type flags = boost::match_default;
-    while(regex_search(start, end, what, e1, flags))
+    while(regex_search(start, end, what, e1, flags))        //type of search function return value : bool
     {
         string temp = string(what[0].first,what[0].second) ;
         char *tmp = (char *)temp.data();
-        MultiTag.push_back(tmp) ;
+        Multi.push_back(tmp) ;
         cout << "match: " << string(what[0].first,what[0].second) << endl;
         start = what[0].second;
     }
 
-    return MultiTag ;
+    return Multi ;
+}
+
+/*
+ * extract string according to regex expression
+ * you can extract content before B by using
+ * (?<=A).*?(?=B)
+ * only .NET support (?<=A.*?>)  unfixed length
+ * */
+
+char * FindSingleByPattern(char * raw , char * pattern){
+    char * Single ;
+    string str(raw);
+    boost::regex e1(pattern);
+    std::string::const_iterator start, end;
+    start = str.begin();
+    end = str.end();
+    boost::match_results<std::string::const_iterator> what;
+    boost::match_flag_type flags = boost::match_default;
+    if(regex_search(start, end, what, e1, flags)) //type of search function return value : bool
+    {
+        string temp = string(what[0].first,what[0].second) ;
+        char *tmp = (char *)temp.data();
+        Single = tmp ;
+        cout << "match: " << string(what[0].first,what[0].second) << endl;
+//        start = what[0].second;
+    }
+    return Single ;
+
 }
 
 
 
+
 char * DeleteByReg(char * raw , char * pattern){
-    std::string phone = pattern;
-    boost::regex r(phone);
+    std::string reg = pattern;
+    boost::regex r(reg);
     std::string fmt("");
-    std::string number(raw);
-//    std::cout << regex_replace(number, r, fmt) << std::endl;
-    string temp =  regex_replace(number, r, fmt);
+    std::string res(raw);
+//    std::cout << regex_replace(res, r, fmt) << std::endl;
+    string temp =  regex_replace(res, r, fmt);
     raw = (char *)temp.data();
     return raw ;
 }
@@ -91,6 +120,8 @@ char * DeleteByReg(char * raw , char * pattern){
  * format determined
  *
  * */
+
+
 char * StringCut(const char * raw , char * start, char * end){
     char * nomatch  = "not exist" ;
     if(!start || !end){
@@ -119,6 +150,7 @@ char * StringCut(const char * raw , char * start, char * end){
     return strncpy(newstr , strtmp1 , strtmp2-strtmp1);
 }
 
+
 /*
  * extract content between two tags/strings
  * format not sure
@@ -126,30 +158,14 @@ char * StringCut(const char * raw , char * start, char * end){
  * you need find the complete tag containing this word
  * */
 /*
-char * CompleteSprintCut(const char * raw , char * start , char * end){
+char * CompleteSpringCut(const char * raw , char * start , char * end){
     const char * pattern = "<"
 }
-
-
-
-char * FindSpringByPattern(const char * raw , char * tag){
-    stringstream ss;
-    ss << tag ;
-    const char * pattern = "<"ss"*>";
-    int ret = fnmatch(pattern, raw , FNM_PERIOD|FNM_CASEFOLD);  //CASEFOLD ignore capital or not
-    if(ret == 0)          //符合pattern的结构
-    {
-        printf("%s\n", entry->d_name);
-    }else if(ret == FNM_NOMATCH){
-        continue ;
-    }else
-    {
-        printf("error file=%s\n", entry->d_name);
-    }
-}
-
-}
 */
+
+
+
+
 
 /*
  * extract words from one string by delimiter

@@ -20,8 +20,10 @@
 
 using namespace std;
 
-char * FindTagByReg(char *raw, char *pattern);
-vector<char *> FindMultiTagByReg(char * raw , char * pattern);
+char * FindTagByPattern(char *raw, char *pattern);
+vector<char *> FindMultiByPattern(char * raw , char * pattern);
+char * FindSingleByPattern(char * raw , char * pattern);
+//char * DeleteByReg(char * raw , char * pattern);
 char * DeleteByReg(char * raw , char * pattern);
 
 char * StringCut(const char * raw , char * start, char * end);

@@ -34,14 +34,21 @@ int main(int argc, char const *argv[])
 //    doc is const value === htmlfile
     stringstream buffer;
     buffer << fin.rdbuf();
-    string contents(buffer.str());
-    doc = contents.data();						// raw html file never be modified
+    string contents(buffer.str());              // raw html file never be modified ----string type
+    doc = contents.data();						// raw html file never be modified ----char * type
 
+/*
+ * todo
+ * 2. 打开文件添加失败跳转逻辑
+ * */
+
+
+    /*
 //    step 1 extract content between <head> & </head>
     char * headres;
     headres = StringCut(doc , "<head>" , "</head>");
     resfile << "title" << '\t' << StringCut((const char * )headres ,"<title>" , "</title>") << endl;
-//    resfile << "keywords" << '\t' << StringCut((const char * )headres,"<meta name=\"keywords\" content=\"" , "\" />") << endl;
+//
     char * keywordres= StringCut((const char * )headres,"<meta name=\"keywords\" content=\"" , "\" />");
     resfile << "keywords" << '\t' ;
 //    PrintVector(StringSplit(keywordres , ",_") , resfile) ;
@@ -57,16 +64,46 @@ int main(int argc, char const *argv[])
 //    cout << "match tag " << BodyTag << endl;
     char * bodyres = StringCut(doc , BodyTag , "</body>") ;
 //    resfile << "body" << '\t' << bodyres << endl;
+*/
 
-//    you need all strings surrounded by script tags  return array of char *
-//    vector<char *> ScriptTags = FindMultiTagByReg(bodyres , "<scipt*</script>");
-    char * scriptres = DeleteByReg(bodyres , "<script.*?</script>");
-    resfile << "body after dele <script> " << '\t' << scriptres << endl;
+//    目前只有.NET支持不确定长度的逆序环视，所以 <?<=body.*>)不能使用
+//    三种方法，1.用不确定长度的正则表达式做两次分割；
+//    2.不确定长度的正则表达式做一次分割+一次匹配；
+//    3.用不确定长度的起始正则表达式先匹配到确定的标签字符串，用确定的字符串+结束标签做逆序+顺序环视匹配中间内容。 in use
+//
+//    step 1 extract content between <head> and </head>
 
-//    step 3 delete unneccessary tags in target text
+    char * headres = FindSingleByPattern((char *)doc , "(?<=<head>).*?(?=</head>)");
+    FindSingleByPattern(headres , "(?<=<title>).*?(?=</title>)");
+    resfile << "title" << '\t' << FindSingleByPattern(headres ,"(?<=<title>).*?(?=</title>)") << endl;
+    char * keywordres= FindSingleByPattern(headres,"(?<=<meta name=\"keywords\" content=\").*?(?=\" />)");
+    resfile << "keywords" << '\t' ;
+//    PrintVector(StringSplit(keywordres , ",_") , resfile) ;
+    resfile << endl ;
+    resfile << "description" << '\t' << FindSingleByPattern(headres , "(?<=<meta name=\"description\" content=\").*?(?=\" />)") << endl;
+    resfile << "author" << '\t' << FindSingleByPattern(headres , "(?<=<meta name=\"author\" content=\").*?(?=\" />)") << endl;
+
+//    step 2 extract content between <body.*?> and </body>
+//    maybe you can try moving the file pointer after </head>   ------- to be optimized
+
+    char * BodyTag = FindSingleByPattern((char *)doc , "<body.*?>") ;
+//    cout << "match tag " << BodyTag << endl;
+    char * bodyres = FindSingleByPattern((char *)doc,"(?<="BodyTag").*?(?=</body>");
+//    resfile << "body" << '\t' << bodyres << endl;
+
+
+//    step 3 delete unneccessary tags and get target text
 //    maybe you should save all unneccessary tags into a vector , delete them by traversing the vector ---- to be optimized
+//    three kinds of tags : comments tag ; special character ; html content tag
+    char * commentres = DeleteByReg(bodyres,"<!--.*?-->|/\*.*?\*/");
+    char * contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
+    resfile << "body after dele <script> " << '\t' << contentres << endl;
+    char * characterres ;
+    resfile << "body after dele special character" << '\t' << characterres << endl;
 
+//    step 4 get the core content by comparing with the threshold
 
+//    step 5 ensure the exact boarder
 //    donnot forget close files
     fin.close();
     resfile.close();
