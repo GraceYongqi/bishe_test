@@ -21,14 +21,18 @@
 using namespace std;
 
 char * FindTagByPattern(char *raw, char *pattern);
-vector<char *> FindMultiByPattern(char * raw , char * pattern);
-char * FindSingleByPattern(char * raw , char * pattern);
-//char * DeleteByReg(char * raw , char * pattern);
-char * DeleteByReg(char * raw , char * pattern);
-
 char * StringCut(const char * raw , char * start, char * end);
+//vector<char *> FindMultiByPattern(char * raw , char * pattern);
+//char * FindSingleByPattern(char * raw , char * pattern);
+//char * DeleteByReg(char * raw , char * pattern);
+//char * DeleteByReg(char * raw , char * pattern);
+
 vector<char *> StringSplit(char * raw , char * delim);
 int PrintVector(vector<char *> v , ofstream &resfile);
+
+vector<string>FindMultiByPattern(string raw ,  string pattern );
+string FindSingleByPattern(string raw , string pattern);
+string DeleteByReg(string raw , string pattern);
 
 #endif //BISHE_TEST_EXTRACTION_H
 

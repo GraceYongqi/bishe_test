@@ -39,7 +39,8 @@ int main(int argc, char const *argv[])
 
 /*
  * todo
- * 2. 打开文件添加失败跳转逻辑
+ * 1. 打开文件添加失败跳转逻辑
+ * 2. 重写StringSplit方法 换成string类型的参数
  * */
 
 
@@ -73,10 +74,11 @@ int main(int argc, char const *argv[])
 //
 //    step 1 extract content between <head> and </head>
 
-    char * headres = FindSingleByPattern((char *)doc , "(?<=<head>).*?(?=</head>)");
-    FindSingleByPattern(headres , "(?<=<title>).*?(?=</title>)");
+//    char * headres = FindSingleByPattern((char *)doc , "(?<=<head>).*?(?=</head>)");
+    string headres = FindSingleByPattern(contents , "(?<=<head>).*?(?=</head>)");
     resfile << "title" << '\t' << FindSingleByPattern(headres ,"(?<=<title>).*?(?=</title>)") << endl;
-    char * keywordres= FindSingleByPattern(headres,"(?<=<meta name=\"keywords\" content=\").*?(?=\" />)");
+//    char * keywordres= FindSingleByPattern(headres,"(?<=<meta name=\"keywords\" content=\").*?(?=\" />)");
+    string keywordres = FindSingleByPattern(headres , "(?<=<meta name=\"keywords\" content=\").*?(?=\" />)");
     resfile << "keywords" << '\t' ;
 //    PrintVector(StringSplit(keywordres , ",_") , resfile) ;
     resfile << endl ;
@@ -86,19 +88,24 @@ int main(int argc, char const *argv[])
 //    step 2 extract content between <body.*?> and </body>
 //    maybe you can try moving the file pointer after </head>   ------- to be optimized
 
-    char * BodyTag = FindSingleByPattern((char *)doc , "<body.*?>") ;
+//    char * BodyTag = FindSingleByPattern((char *)doc , "<body.*?>") ;
+    string BodyTag = FindSingleByPattern(contents , "<body.*?>");
 //    cout << "match tag " << BodyTag << endl;
-    char * bodyres = FindSingleByPattern((char *)doc,"(?<="BodyTag").*?(?=</body>");
+//    char * bodyres = FindSingleByPattern((char *)doc,"(?<="BodyTag").*?(?=</body>");
+    string bodyres = FindSingleByPattern(contents , "(?<="+BodyTag+").*?(?=</body>" );
 //    resfile << "body" << '\t' << bodyres << endl;
 
 
 //    step 3 delete unneccessary tags and get target text
 //    maybe you should save all unneccessary tags into a vector , delete them by traversing the vector ---- to be optimized
 //    three kinds of tags : comments tag ; special character ; html content tag
-    char * commentres = DeleteByReg(bodyres,"<!--.*?-->|/\*.*?\*/");
-    char * contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
+//    char * commentres = DeleteByReg(bodyres,"<!--.*?-->|/\*.*?\*/");
+    string commentres = DeleteByReg(bodyres , "<!--.*?-->|/\*.*?\*/" );
+//    char * contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
+    string contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
     resfile << "body after dele <script> " << '\t' << contentres << endl;
-    char * characterres ;
+//    char * characterres ;
+    string characterres ;
     resfile << "body after dele special character" << '\t' << characterres << endl;
 
 //    step 4 get the core content by comparing with the threshold
