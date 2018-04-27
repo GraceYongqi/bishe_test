@@ -119,7 +119,7 @@ string DeleteByReg(string raw , string pattern){
 //    std::string reg = pattern;
 //    boost::regex r(reg);
     boost::regex r(pattern);
-    std::string fmt("");
+    std::string fmt("\0");
 //    std::string res(raw);
 //    std::cout << regex_replace(res, r, fmt) << std::endl;
 //    string temp =  regex_replace(res, r, fmt);

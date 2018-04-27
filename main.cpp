@@ -26,9 +26,12 @@ int main(int argc, char const *argv[])
 //    open file for writing results
     ofstream resfile;
     resfile.open("result.txt");
+    assert(resfile) ;
 //    read html file
     ifstream fin;
     fin.open("2.txt");
+    assert(fin) ;
+
     const char * doc;
 //    txt -> string
 //    doc is const value === htmlfile
@@ -103,7 +106,7 @@ int main(int argc, char const *argv[])
     string commentres = DeleteByReg(bodyres , "<!--.*?-->|/\\*.*?\\*/" );
 
 //    char * contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
-    string contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
+    string contentres = DeleteByReg(commentres , "<script.*?>.*?</script>|<div.*?>.*?</div>");
     resfile << "body after dele <script> " << '\t' << contentres << endl;
 //    char * characterres ;
     string characterres ;
