@@ -15,6 +15,8 @@
 #include <regex.h>
 #include <assert.h>
 #include <boost/regex.hpp>
+#include <boost/algorithm/string.hpp>
+
 
 //#define  EXIT_SUCCESS 0 ;
 
@@ -28,11 +30,13 @@ char * StringCut(const char * raw , char * start, char * end);
 //char * DeleteByReg(char * raw , char * pattern);
 
 vector<char *> StringSplit(char * raw , char * delim);
-int PrintVector(vector<char *> v , ofstream &resfile);
+//int PrintVector(vector<char *> v , ofstream &resfile);
 
 vector<string>FindMultiByPattern(string raw ,  string pattern );
 string FindSingleByPattern(string raw , string pattern);
 string DeleteByReg(string raw , string pattern);
+int PrintVector(vector<string> v , ofstream &resfile);
+
 
 #endif //BISHE_TEST_EXTRACTION_H
 

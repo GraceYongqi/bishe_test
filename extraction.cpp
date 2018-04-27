@@ -199,15 +199,15 @@ vector<char *> StringSplit(char * raw , char * delim ){
 /*
  * print elements of the vector
  * */
-/*
-int PrintVector(vector<char *> v , ofstream  &resfile){     //basic class(basic_ios) does not allow to be copied ,
+
+int PrintVector(vector<string> v , ofstream  &resfile){     //basic class(basic_ios) does not allow to be copied ,
                                                             //you must pass the quotation arguement
-    for(auto val : v){
-        resfile << val << '\t' ;
+    for(vector<string>::const_iterator iter = v.begin();iter!=v.end();iter++){
+        cout << (*iter) << endl;
     }
     return EXIT_SUCCESS;
 }
-*/
+
 
 
 

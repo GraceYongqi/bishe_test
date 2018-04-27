@@ -83,7 +83,9 @@ int main(int argc, char const *argv[])
 //    char * keywordres= FindSingleByPattern(headres,"(?<=<meta name=\"keywords\" content=\").*?(?=\" />)");
     string keywordres = FindSingleByPattern(headres , "(?<=<meta name=\"keywords\" content=\").*?(?=\" />)");
     resfile << "keywords" << '\t' ;
-//    PrintVector(StringSplit(keywordres , ",_") , resfile) ;
+    vector<string> keywordvec ;
+    boost::split(keywordvec,keywordres,boost::is_any_of(",_"));
+    PrintVector(keywordvec , resfile) ;
     resfile << endl ;
     resfile << "description" << '\t' << FindSingleByPattern(headres , "(?<=<meta name=\"description\" content=\").*?(?=\" />)") << endl;
     resfile << "author" << '\t' << FindSingleByPattern(headres , "(?<=<meta name=\"author\" content=\").*?(?=\" />)") << endl;
@@ -106,8 +108,8 @@ int main(int argc, char const *argv[])
     string commentres = DeleteByReg(bodyres , "<!--.*?-->|/\\*.*?\\*/" );
 
 //    char * contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
-    string contentres = DeleteByReg(commentres , "<script.*?>.*?</script>|<div.*?>.*?</div>");
-    resfile << "body after dele <script> " << '\t' << contentres << endl;
+    string contentres = DeleteByReg(commentres , "<script.*?>.*?</script>|<style.*?>.*?</style>");
+    resfile << "body after dele <script>&<style> " << '\t' << contentres << endl;
 //    char * characterres ;
     string characterres ;
     resfile << "body after dele special character" << '\t' << characterres << endl;
