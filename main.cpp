@@ -29,8 +29,10 @@ int main(int argc, char const *argv[])
     assert(resfile) ;
 //    read html file
     ifstream fin;
-    fin.open("2.txt");
+    fin.open("3_eng.txt");
     assert(fin) ;
+
+
 
     const char * doc;
 //    txt -> string
@@ -70,6 +72,7 @@ int main(int argc, char const *argv[])
 //    resfile << "body" << '\t' << bodyres << endl;
 */
 
+//    class Extractor
 //    目前只有.NET支持不确定长度的逆序环视，所以 <?<=body.*>)不能使用
 //    三种方法，1.用不确定长度的正则表达式做两次分割；
 //    2.不确定长度的正则表达式做一次分割+一次匹配；
@@ -78,17 +81,18 @@ int main(int argc, char const *argv[])
 //    step 1 extract content between <head> and </head>
 
 //    char * headres = FindSingleByPattern((char *)doc , "(?<=<head>).*?(?=</head>)");
-    string headres = FindSingleByPattern(contents , "(?<=<head>).*?(?=</head>)");
+    string HeadTag = FindSingleByPattern(contents,"<head.*?>");
+    string headres = FindSingleByPattern(contents , "(?<="+HeadTag+").*?(?=</head>)");
     resfile << "title" << '\t' << FindSingleByPattern(headres ,"(?<=<title>).*?(?=</title>)") << endl;
 //    char * keywordres= FindSingleByPattern(headres,"(?<=<meta name=\"keywords\" content=\").*?(?=\" />)");
-    string keywordres = FindSingleByPattern(headres , "(?<=<meta name=\"keywords\" content=\").*?(?=\" />)");
+    string keywordres = FindSingleByPattern(headres , "(?<=<meta name=\"keywords\" content=\").*?(?=\")");
     resfile << "keywords" << '\t' ;
     vector<string> keywordvec ;
     boost::split(keywordvec,keywordres,boost::is_any_of(",_"));
     PrintVector(keywordvec , resfile) ;
     resfile << endl ;
-    resfile << "description" << '\t' << FindSingleByPattern(headres , "(?<=<meta name=\"description\" content=\").*?(?=\" />)") << endl;
-    resfile << "author" << '\t' << FindSingleByPattern(headres , "(?<=<meta name=\"author\" content=\").*?(?=\" />)") << endl;
+    resfile << "description" << '\t' << FindSingleByPattern(headres , "(?<=<meta name=\"description\" content=\").*?(?=\")") << endl;
+    resfile << "author" << '\t' << FindSingleByPattern(headres , "(?<=<meta name=\"author\" content=\").*?(?=\")") << endl;
 
 //    step 2 extract content between <body.*?> and </body>
 //    maybe you can try moving the file pointer after </head>   ------- to be optimized
@@ -105,19 +109,34 @@ int main(int argc, char const *argv[])
 //    maybe you should save all unneccessary tags into a vector , delete them by traversing the vector ---- to be optimized
 //    three kinds of tags : comments tag ; special character ; html content tag
 //    char * commentres = DeleteByReg(bodyres,"<!--.*?-->|\/\*.*?\*\/");
-    string commentres = DeleteByReg(bodyres , "<!--.*?-->|/\\*.*?\\*/" );
+    string commentres = DeleteByReg(bodyres , "<!.*?-->|/\\*.*?\\*/" );
 
 //    char * contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
     string contentres = DeleteByReg(commentres , "<script.*?>.*?</script>|<style.*?>.*?</style>");
-    resfile << "body after dele <script>&<style> " << '\t' << contentres << endl;
+    resfile << "body after dele <!&/**/&<script>&<style> " << endl ;
+//    resfile << contentres << endl;
+    string areares = DeleteByReg(contentres , "<div.*?>|<font.*?>|<p.*?>");
+    resfile << "body after dele <div&<font&<p" << endl;
+//    resfile << areares << endl;
 //    char * characterres ;
-    string characterres ;
-    resfile << "body after dele special character" << '\t' << characterres << endl;
+    string characterres = DeleteByReg(areares , "&nbsp|&amp");
+    resfile << "body after dele special character" << endl;
+    resfile << characterres << endl;
 
-//    step 4 get the core content by comparing with the threshold
+//    class Parser
+//    step 4 distinguish tag and text character  symbol is is_tag =0/1
 
-//    step 5 ensure the exact boarder
+//    step 5 get the candidate content by comparing with the threshold
+    string target = characterres ;
+    int length = target.size() ;
+
+
+
+//    step 6 get the probable boarder by searching the max successive candidates
 //    donnot forget close files
+
+//    class Caculator
+//    step 7 caculate density and get the accurate border
     fin.close();
     resfile.close();
     return EXIT_SUCCESS;

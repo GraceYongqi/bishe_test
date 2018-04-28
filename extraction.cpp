@@ -87,7 +87,7 @@ vector<string>FindMultiByPattern(string raw ,  string pattern ){
 
 //char * FindSingleByPattern(char * raw , char * pattern){
 string FindSingleByPattern(string raw , string pattern){
-
+    assert(raw.size()!=0) ;
     string Single ;
 //    string str(raw);
     boost::regex e1(pattern);
@@ -203,7 +203,7 @@ vector<char *> StringSplit(char * raw , char * delim ){
 int PrintVector(vector<string> v , ofstream  &resfile){     //basic class(basic_ios) does not allow to be copied ,
                                                             //you must pass the quotation arguement
     for(vector<string>::const_iterator iter = v.begin();iter!=v.end();iter++){
-        cout << (*iter) << endl;
+        resfile << (*iter) << '\t';
     }
     return EXIT_SUCCESS;
 }
