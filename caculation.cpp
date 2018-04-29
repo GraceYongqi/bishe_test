@@ -9,14 +9,14 @@ int CaculateDensity(int xres, int yres, int approxStart, int approxEnd,
     int x, y;
     int M = (approxStart+approxEnd)/2;
     int density;
-    for(x=(contentStart.begin()>0?contentStart.begin():0);x<=(contentStart.end()<M?M:contentStart.end());x++){
+    for(x=((*contentStart.begin())>0?(*contentStart.begin()):0);x<=((*contentStart.end())<M?M:(*contentStart.end()));x++){
         int max = 0;
         density = CaculateVector(is_tag,0,x-1)+M-x+1-CaculateVector(is_tag,x,M);
         if(density > max){
             xres = x;
         }
     }
-    for(y= (contentEnd.begin()>M?contentEnd.begin():M);y<=(contentEnd.end()<length)?contentEnd.end():length;y++){
+    for(y= ((*contentEnd.begin())>M?(*contentEnd.begin()):M);y<=((*contentEnd.end())<length)?(*contentEnd.end()):length;y++){
         int max = 0;
         density = y-M+1-CaculateVector(is_tag,M,y)+CaculateVector(is_tag,y+1,length);
         if(max < density){

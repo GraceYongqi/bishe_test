@@ -8,35 +8,59 @@
 vector<int> JudgeTag(vector<int> is_tag, int length , string target,    vector<int> contentStart, vector<int> contentEnd ){
     int i = 0;
     int c = 0;
+cout << length << endl;
+cout << target[69876] << endl;
+cout << target[length] << endl;
+cout << is_tag.size() << endl;
 //    vector<int> is_tag ;
-    int labelStart, labelEnd;
-    int find_tag;
+    int labelStart=0, labelEnd=0;
+    int find_tag=0;
     while(i<length){
-        while(target[find_tag] != '<'){
+//cout << " enter while" << endl;
+	find_tag = i;
+        while(target[find_tag] != '<'&&find_tag<length-1){
             find_tag++ ;
+	    
         }
         labelStart = find_tag ;
         if(i<labelStart){
-            contentStart.at(c) = i;
-            contentEnd.at(c) = labelStart-1 ;
-            c++;
-            for(int j=i; j<labelStart; j++) {
-                is_tag.at(j) = 0;
-            }
-        }
+		if(labelStart!=length-1){
+            		contentStart.at(c) = i;
+            		contentEnd.at(c) = labelStart-1 ;
+//cout << "contentEnd" << endl;
+            		c++;
+cout << "i:" << i << endl;
+cout << "labelStart:"<< labelStart << endl;
+            		for(int j=i; j<labelStart; j++) {
+//cout << "is_tag enter";
+//cout << target[j];
+                		is_tag.at(j) = 0;
+//cout << "is_tag end" << endl;
+            		}
+        	}
+	}
         else{
-            labelStart = i;
+           	labelStart = i;
         }
         find_tag = labelStart ;
-        while(target[find_tag] != '>'){
-            find_tag++;
+        while(target[find_tag] != '>'&&find_tag<=length-1){
+	    find_tag++;
         }
         labelEnd = find_tag ;
-        for(int j=labelStart; j<=labelEnd; j++){
-            is_tag.at(j) = 1;
-        }
+//cout << "labelStart:" <<  labelStart << endl;
+//cout << target[labelStart] << endl;
+//cout << "label end:" << labelEnd << endl;
+	if(labelStart!=length-1){
+        	for(int j=labelStart; j<=labelEnd; j++){
+cout << "enter for " << endl;
+            		is_tag.at(j) = 1;
+cout << "for end " << endl;
+        	}
+	}
         i = labelEnd  + 1;
+//cout << "is_tag for end " << endl;
     }
+cout << "before return " << endl;
     return is_tag ;
 }
 

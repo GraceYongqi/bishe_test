@@ -130,19 +130,29 @@ int main(int argc, char const *argv[])
 
 //    step 5 get the candidate content by comparing with the threshold
     string target = characterres ;
+    int begin = 0;
+
+        begin = target.find(" ",begin); 
+
+        while(begin != -1){
+
+        target.replace(begin, 1, "");
+        begin = target.find(" ",begin); 
+
+        }
     int length = target.size() ;
     int exact_x, exact_y;
     int arealength =100, factor =0.7;                    //arealength--D usually 100 or 200; factor -- a usually 0.7 or 0.8
 
-    vector<int> contentStart, contentEnd;
-    vector<int> TagFlag ;
-    vector<int> CandidateFlag ;
-
+    vector<int> contentStart(length), contentEnd(length);
+    vector<int> TagFlag(length) ;
+    vector<int> CandidateFlag(length) ;
+/*
     contentStart.reserve(length);
     contentEnd.reserve(length);
     TagFlag.reserve(length);
     CandidateFlag.reserve(length);
-
+*/
     TagFlag= JudgeTag(TagFlag, length, target, contentStart, contentEnd);
     CandidateFlag= GetCandidates(CandidateFlag, TagFlag, length, arealength, factor);
     assert(!TagFlag.empty());
