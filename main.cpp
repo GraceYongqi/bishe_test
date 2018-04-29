@@ -16,6 +16,8 @@
 */
 
 #include "extraction.h"
+#include "parse.h"
+#include "caculation.h"
 
 /*
  * function declaration
@@ -129,14 +131,30 @@ int main(int argc, char const *argv[])
 //    step 5 get the candidate content by comparing with the threshold
     string target = characterres ;
     int length = target.size() ;
+    int exact_x, exact_y;
+    int arealength =100, factor =0.7;                    //arealength--D usually 100 or 200; factor -- a usually 0.7 or 0.8
 
-
+    vector<int> contentStart, contentEnd;
+    vector<int> TagFlag = JudgeTag(length, target, contentStart, contentEnd);
+    vector<int> CandidateFlag = GetCandidates(TagFlag, length, arealength, factor);
 
 //    step 6 get the probable boarder by searching the max successive candidates
-//    donnot forget close files
+    int probablestart, probableend;
+    GetProbableBoarder(probablestart, probableend, length, CandidateFlag, arealength);
 
 //    class Caculator
 //    step 7 caculate density and get the accurate border
+    CaculateDensity(exact_x, exact_y, probablestart, probableend, TagFlag, contentStart, contentEnd, length);
+
+    cout << "target text:" << endl;
+    for(int count = exact_x; count <= exact_y; count++){
+        cout << target[count] ;
+    }
+    cout << endl;
+
+//    step 8 delete unneccessary tags
+
+//    donnot forget close files
     fin.close();
     resfile.close();
     return EXIT_SUCCESS;

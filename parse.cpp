@@ -5,11 +5,9 @@
 #include "parse.h"
 #include <numeric>
 
-vector<int> JudgeTag(int length , string target){
+vector<int> JudgeTag(int length , string target,    vector<int> contentStart, vector<int> contentEnd ){
     int i = 0;
     int c = 0;
-    vector<int> contentStart ;
-    vector<int> contentEnd ;
     vector<int> is_tag ;
     int labelStart, labelEnd;
     int find_tag;
@@ -50,8 +48,11 @@ vector<int> GetCandidates(vector<int> is_tag, int length, int D, float a){
         start = k*D;
         if((k+1)*D>length) end=length -1;
         else end=(k+1)*D-1;
-        int Num = accumulate(is_tag.begin(), is_tag.end(), 0);
-        int tagNum = accumulate(is_tag.at(start), is_tag.at(end), 0);
+        int Num = end-start+1;
+        int tagNum = 0;
+        for(int acc=start;acc<=end;acc++){
+            tagNum += is_tag.at(acc);
+        }
         int charNum = Num - tagNum;
         if(charNum > a*D) candidate.at(k) = 1;
         else candidate.at(k) = 0;
