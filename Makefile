@@ -18,7 +18,7 @@ extraction.o:extraction.cpp extraction.h
 	$(CC) $(CFLAGS) $(INCLUDE) -c extraction.cpp
 
 parse.o:parse.cpp parse.h
-    $(CC) $(CFLAGS) $(INCLUDE) -c parse.cpp
+	$(CC) $(CFLAGS) $(INCLUDE) -c parse.cpp
 
 caculation.o:caculation.cpp caculation.h
 	$(CC) $(CFLAGS) $(INCLUDE) -c caculation.cpp
