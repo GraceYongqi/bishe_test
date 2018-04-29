@@ -135,9 +135,20 @@ int main(int argc, char const *argv[])
     int arealength =100, factor =0.7;                    //arealength--D usually 100 or 200; factor -- a usually 0.7 or 0.8
 
     vector<int> contentStart, contentEnd;
-    vector<int> TagFlag = JudgeTag(length, target, contentStart, contentEnd);
-    vector<int> CandidateFlag = GetCandidates(TagFlag, length, arealength, factor);
+    vector<int> TagFlag ;
+    vector<int> CandidateFlag ;
 
+    contentStart.reserve(length);
+    contentEnd.reserve(length);
+    TagFlag.reserve(length);
+    CandidateFlag.reserve(length);
+
+    TagFlag= JudgeTag(TagFlag, length, target, contentStart, contentEnd);
+    CandidateFlag= GetCandidates(CandidateFlag, TagFlag, length, arealength, factor);
+    assert(!TagFlag.empty());
+    assert(!CandidateFlag.empty());
+    assert(!contentStart.empty());
+    assert(!contentEnd.empty());
 //    step 6 get the probable boarder by searching the max successive candidates
     int probablestart, probableend;
     GetProbableBoarder(probablestart, probableend, length, CandidateFlag, arealength);
@@ -153,6 +164,12 @@ int main(int argc, char const *argv[])
     cout << endl;
 
 //    step 8 delete unneccessary tags
+
+//  Release vector's memory
+    vector<int>().swap(contentStart);
+    vector<int>().swap(contentEnd);
+    vector<int>().swap(TagFlag);
+    vector<int>().swap(CandidateFlag);
 
 //    donnot forget close files
     fin.close();

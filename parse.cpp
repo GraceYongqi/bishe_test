@@ -5,10 +5,10 @@
 #include "parse.h"
 #include <numeric>
 
-vector<int> JudgeTag(int length , string target,    vector<int> contentStart, vector<int> contentEnd ){
+vector<int> JudgeTag(vector<int> is_tag, int length , string target,    vector<int> contentStart, vector<int> contentEnd ){
     int i = 0;
     int c = 0;
-    vector<int> is_tag ;
+//    vector<int> is_tag ;
     int labelStart, labelEnd;
     int find_tag;
     while(i<length){
@@ -40,8 +40,8 @@ vector<int> JudgeTag(int length , string target,    vector<int> contentStart, ve
     return is_tag ;
 }
 
-vector<int> GetCandidates(vector<int> is_tag, int length, int D, float a){
-    vector<int> candidate;
+vector<int> GetCandidates(vector<int> candidate, vector<int> is_tag, int length, int D, float a){
+//    vector<int> candidate;
     int k = 0;
     while(k*D<length){
         int start , end;
