@@ -36,6 +36,7 @@ vector<string>FindMultiByPattern(string raw ,  string pattern );
 string FindSingleByPattern(string raw , string pattern);
 string DeleteByReg(string raw , string pattern);
 int PrintVector(vector<string> v , ofstream &resfile);
+string ReplaceSpace(string raw);
 
 
 #endif //BISHE_TEST_EXTRACTION_H

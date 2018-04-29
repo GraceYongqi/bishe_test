@@ -130,16 +130,8 @@ int main(int argc, char const *argv[])
 
 //    step 5 get the candidate content by comparing with the threshold
     string target = characterres ;
-    int begin = 0;
+    target = ReplaceSpace(target);
 
-        begin = target.find(" ",begin); 
-
-        while(begin != -1){
-
-        target.replace(begin, 1, "");
-        begin = target.find(" ",begin); 
-
-        }
     int length = target.size() ;
     int exact_x, exact_y;
     int arealength =100, factor =0.7;                    //arealength--D usually 100 or 200; factor -- a usually 0.7 or 0.8
