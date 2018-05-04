@@ -153,12 +153,14 @@ int main(int argc, char const *argv[])
     assert(!contentEnd.empty());
 //    step 6 get the probable boarder by searching the max successive candidates
     int probablestart, probableend;
-    GetProbableBoarder(probablestart, probableend, length, CandidateFlag, arealength);
+    GetProbableBoarder(&probablestart, &probableend, length, CandidateFlag, arealength);
 
+    cout << probablestart << ":" << probableend << endl;
 //    class Caculator
 //    step 7 caculate density and get the accurate border
-    CaculateDensity(exact_x, exact_y, probablestart, probableend, TagFlag, contentStart, contentEnd, length);
+    CaculateDensity(&exact_x, &exact_y, probablestart, probableend, TagFlag, contentStart, contentEnd, length);
 
+    cout << "x:" << exact_x << " y:" << exact_y << endl;
     cout << "target text:" << endl;
     for(int count = exact_x; count <= exact_y; count++){
         cout << target[count] ;

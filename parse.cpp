@@ -66,7 +66,7 @@ vector<int> GetCandidates(vector<int> candidate, vector<int> is_tag, int length,
     return candidate;
 }
 
-int GetProbableBoarder(int start, int end, int length, vector<int> candidate, int D) {
+int GetProbableBoarder(int *start, int *end, int length, vector<int> candidate, int D) {
     int k = 0, maxLength = 0, currentLength = 0, approxStart = 0, approxEnd = 0;
     while (k * D < length) {
         if (candidate.at(k) == 1) {
@@ -87,8 +87,8 @@ int GetProbableBoarder(int start, int end, int length, vector<int> candidate, in
         approxEnd = length - 1;
         approxStart = (k - maxLength) * D;
     }
-    start = approxStart;
-    end = approxEnd;
+    *start = approxStart;
+    *end = approxEnd;
     return EXIT_SUCCESS;
 }
 

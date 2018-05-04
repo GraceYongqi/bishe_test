@@ -7,7 +7,7 @@
 
 #include "extraction.h"
 
-int CaculateDensity(int xres, int yres, int approxStart, int approxEnd,
+int CaculateDensity(int *xres, int *yres, int approxStart, int approxEnd,
                     vector<int> is_tag, vector<int> contentStart, vector<int> contentEnd, int length);
 int CaculateVector(vector<int> v, int start, int end);
 
