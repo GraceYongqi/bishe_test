@@ -125,7 +125,7 @@ string DeleteByReg(string raw, string pattern) {
 }
 
 string ReplaceSpace(string raw) {
-    boost::regex r(" +|\n*");
+    boost::regex r(" +|\n+");
     std::string fmt(" ");
     raw = regex_replace(raw, r, fmt);
     return raw;

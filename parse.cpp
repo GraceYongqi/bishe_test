@@ -5,10 +5,11 @@
 #include "parse.h"
 #include <numeric>
 
-vector<int> JudgeTag(vector<int> is_tag, int length, string target, vector<int> contentStart, vector<int> contentEnd) {
+vector<int> JudgeTag(int *contentStartLength, int *contentEndLength, vector<int> &is_tag, int length, string target, vector<int> &contentStart, vector<int> &contentEnd) {
     int i = 0;
     int c = 0;
 //    vector<int> is_tag ;
+cout << "length:" << length << endl;
     int labelStart = 0, labelEnd = 0;
     int find_tag = 0;
     while (i < length) {
@@ -21,7 +22,10 @@ vector<int> JudgeTag(vector<int> is_tag, int length, string target, vector<int> 
         if (i < labelStart) {
             if (labelStart != length - 1) {
                 contentStart.at(c) = i;
+//cout <<"contentStart:" << contentStart.at(c) << endl;
+
                 contentEnd.at(c) = labelStart - 1;
+//cout << "contentEnd:" << contentEnd.at(c) << endl;
                 c++;
                 for (int j = i; j < labelStart; j++) {
                     is_tag.at(j) = 0;
@@ -30,6 +34,10 @@ vector<int> JudgeTag(vector<int> is_tag, int length, string target, vector<int> 
         } else {
             labelStart = i;
         }
+//cout << "c: " << c << endl;
+//cout << "contentStart:" << contentStart.at(c) << "," << contentStart.at(c) <<endl;
+//cout << "contentEnd:" << contentEnd.at(c) << "," << contentEnd.at(c) << endl;
+ 
         find_tag = labelStart;
         while (target[find_tag] != '>' && find_tag <= length - 1) {
             find_tag++;
@@ -41,11 +49,18 @@ vector<int> JudgeTag(vector<int> is_tag, int length, string target, vector<int> 
             }
         }
         i = labelEnd + 1;
+
     }
+//cout << contentStart[0] << ", " << contentStart[100] << endl;
+cout << "c: " << c << endl;
+cout << "contentStart:" << *(contentStart.begin()) << "," << contentStart.at(c-1)<<endl;
+cout << "contentEnd:" << *(contentEnd.begin()) << "," << contentEnd.at(c-1) << endl;
+	*contentStartLength = c;
+	*contentEndLength = c;
     return is_tag;
 }
 
-vector<int> GetCandidates(vector<int> candidate, vector<int> is_tag, int length, int D, float a) {
+vector<int> GetCandidates(vector<int> &candidate, vector<int> &is_tag, int length, int D, float a) {
 //    vector<int> candidate;
     int k = 0;
     while (k * D < length) {

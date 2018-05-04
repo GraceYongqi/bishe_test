@@ -133,10 +133,11 @@ int main(int argc, char const *argv[])
     target = ReplaceSpace(target);
 
     int length = target.size() ;
-    int exact_x, exact_y;
+    int exact_x=0, exact_y=0;
     int arealength =100, factor =0.7;                    //arealength--D usually 100 or 200; factor -- a usually 0.7 or 0.8
 
-    vector<int> contentStart(length), contentEnd(length);
+    vector<int> contentStart(length);
+	vector<int> contentEnd(length);
     vector<int> TagFlag(length) ;
     vector<int> CandidateFlag(length) ;
 /*
@@ -145,21 +146,26 @@ int main(int argc, char const *argv[])
     TagFlag.reserve(length);
     CandidateFlag.reserve(length);
 */
-    TagFlag= JudgeTag(TagFlag, length, target, contentStart, contentEnd);
+	int contentStartLength = 0;
+	int contentEndLength = 0;
+    TagFlag= JudgeTag(&contentStartLength, &contentEndLength, TagFlag, length, target, contentStart, contentEnd);
+cout << "tagflag "<< *--TagFlag.end() << "," << TagFlag[0] << endl;
+cout << "length : " << contentStartLength-1 << endl;
+cout << "in main:contentStart:" << *contentStart.begin() <<","<< contentStart[contentStartLength-1] << endl;
     CandidateFlag= GetCandidates(CandidateFlag, TagFlag, length, arealength, factor);
     assert(!TagFlag.empty());
     assert(!CandidateFlag.empty());
     assert(!contentStart.empty());
     assert(!contentEnd.empty());
 //    step 6 get the probable boarder by searching the max successive candidates
-    int probablestart, probableend;
+    int probablestart=0, probableend=0;
     GetProbableBoarder(&probablestart, &probableend, length, CandidateFlag, arealength);
 
     cout << probablestart << ":" << probableend << endl;
 //    class Caculator
 //    step 7 caculate density and get the accurate border
-    CaculateDensity(&exact_x, &exact_y, probablestart, probableend, TagFlag, contentStart, contentEnd, length);
-
+    CaculateDensity(&exact_x, &exact_y, probablestart, probableend, TagFlag, contentStart, contentEnd, contentStartLength, contentEndLength, length);
+cout << " caculatedensity " << endl;
     cout << "x:" << exact_x << " y:" << exact_y << endl;
     cout << "target text:" << endl;
     for(int count = exact_x; count <= exact_y; count++){
