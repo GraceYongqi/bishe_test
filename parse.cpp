@@ -52,9 +52,6 @@ cout << "length:" << length << endl;
 
     }
 //cout << contentStart[0] << ", " << contentStart[100] << endl;
-cout << "c: " << c << endl;
-cout << "contentStart:" << *(contentStart.begin()) << "," << contentStart.at(c-1)<<endl;
-cout << "contentEnd:" << *(contentEnd.begin()) << "," << contentEnd.at(c-1) << endl;
 	*contentStartLength = c;
 	*contentEndLength = c;
     return is_tag;

@@ -149,9 +149,6 @@ int main(int argc, char const *argv[])
 	int contentStartLength = 0;
 	int contentEndLength = 0;
     TagFlag= JudgeTag(&contentStartLength, &contentEndLength, TagFlag, length, target, contentStart, contentEnd);
-cout << "tagflag "<< *--TagFlag.end() << "," << TagFlag[0] << endl;
-cout << "length : " << contentStartLength-1 << endl;
-cout << "in main:contentStart:" << *contentStart.begin() <<","<< contentStart[contentStartLength-1] << endl;
     CandidateFlag= GetCandidates(CandidateFlag, TagFlag, length, arealength, factor);
     assert(!TagFlag.empty());
     assert(!CandidateFlag.empty());
@@ -165,15 +162,24 @@ cout << "in main:contentStart:" << *contentStart.begin() <<","<< contentStart[co
 //    class Caculator
 //    step 7 caculate density and get the accurate border
     CaculateDensity(&exact_x, &exact_y, probablestart, probableend, TagFlag, contentStart, contentEnd, contentStartLength, contentEndLength, length);
-cout << " caculatedensity " << endl;
     cout << "x:" << exact_x << " y:" << exact_y << endl;
-    cout << "target text:" << endl;
-    for(int count = exact_x; count <= exact_y; count++){
-        cout << target[count] ;
-    }
-    cout << endl;
+    string coretarget = target.substr(exact_x, exact_y-exact_x+1);
 
+ /*
+    resfile << "target text:" << endl;
+    for(int count = exact_x; count <= exact_y; count++){
+        resfile << target[count] ;
+    }
+    resfile << endl;
+*/
 //    step 8 delete unneccessary tags
+    string core1 = DeleteByReg(coretarget, "<strong.*?>|<img.*?>|<a.*?>");
+    string core2 = Replace(core1, "</p.*?>","\n");
+    string core3 = Replace(core2, "\t+", "\t");
+    string core4 = Replace(core3, "\n+", "\n");
+    string core = DeleteByReg(core4, "<br>");
+    resfile << "final result :" << endl;
+    resfile << core << endl;
 
 //  Release vector's memory
     vector<int>().swap(contentStart);

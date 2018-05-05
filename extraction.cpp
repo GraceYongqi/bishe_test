@@ -39,12 +39,9 @@ char *FindTagByReg(char *raw, char *pattern) {
         }
 
         outdata = new char[pm[0].rm_eo - pm[0].rm_so + 1];
-        cout << "size : " << pm[0].rm_eo - pm[0].rm_so << endl;
         strncpy(outdata, raw, pm[0].rm_eo - pm[0].rm_so);
         outdata[pm[0].rm_eo - pm[0].rm_so] = '\0';
-        cout << "out size " << strlen(outdata) << endl;
     }
-    cout << "get outdata" << endl;
     regfree(&reg);
     return outdata;
 }
@@ -125,9 +122,19 @@ string DeleteByReg(string raw, string pattern) {
 }
 
 string ReplaceSpace(string raw) {
-    boost::regex r(" +|\n+");
-    std::string fmt(" ");
-    raw = regex_replace(raw, r, fmt);
+    boost::regex r1(" +");
+    std::string fmt1(" ");
+    raw = regex_replace(raw, r1, fmt1);
+    boost::regex r2("\n+");
+    std::string fmt2("\n");
+    raw = regex_replace(raw, r2, fmt2);
+    return raw;
+}
+
+string Replace(string raw, string from, string to){
+    boost::regex r(from);
+//    std::string fmt(to);
+    raw = regex_replace(raw, r, to);
     return raw;
 }
 
@@ -156,7 +163,6 @@ char *StringCut(const char *raw, char *start, char *end) {
     }
 
     int len1 = strlen((const char *) start);
-    cout << "strlen1 " << endl;
 
     char *newstr = new char[strtmp2 - strtmp1 + 1];
     memset(newstr, 0, (strtmp2 - strtmp1 + 1) * sizeof(char));
