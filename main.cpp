@@ -123,7 +123,7 @@ int main(int argc, char const *argv[])
 //    char * characterres ;
     string characterres = DeleteByReg(areares , "&nbsp|&amp");
     resfile << "body after dele special character" << endl;
-    resfile << characterres << endl;
+//    resfile << characterres << endl;
 
 //    class Parser
 //    step 4 distinguish tag and text character  symbol is is_tag =0/1
