@@ -39,7 +39,7 @@ int CaculateDensity(int *xres, int *yres, int approxStart, int approxEnd,
 	for(y=ystart;y<=yend;y++){
 //    for(y= ((*contentEnd.begin())>M?(*contentEnd.begin()):M);y<=(contentEnd.at(contentEndLength-1)<(length-1))?contentEnd.at(contentEndLength-1):(length-1);y++){
         int max = 0;
-	    int c1 = CaculateVector(is_tag,M,y.logfile);
+	    int c1 = CaculateVector(is_tag,M,y,logfile);
 	    int c2 = CaculateVector(is_tag,y,length,logfile);
 	    density = y-M+1-c1+c2;
 //        density = y-M+1-CaculateVector(is_tag,M,y)+CaculateVector(is_tag,y,length);
