@@ -46,18 +46,18 @@ int main(int argc, char const *argv[])
 //      open file for writing results
         ofstream resfile;
         string resultfile = "result/" +file_pre.at(i) +"_result.txt";
-        resfile.open(resultfile);
+        resfile.open( resultfile.data());
         assert(resfile) ;
 
 //        open log for writing stdout
         ofstream logfile;
         string recordfile = "log/" +file_pre.at(i) +"_log.txt";
-        logfile.open(recordfile);
+        logfile.open(recordfile.data());
         assert(logfile) ;
 
 //      read html file
         ifstream fin;
-        fin.open(filelist.at(i));
+        fin.open(filelist.at(i).data());
         assert(fin) ;
         const char * doc;
 //    txt -> string
