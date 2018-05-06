@@ -8,7 +8,7 @@
  * match tag which format is unsure or not fixed
  * return a accurate tag(string) as argument passed to StringCut
  * */
-char *FindTagByReg(char *raw, char *pattern) {
+char *FindTagByReg(char *raw, char *pattern, ofstream &logfile) {
 
     char *outdata;
     regex_t reg;
@@ -47,7 +47,7 @@ char *FindTagByReg(char *raw, char *pattern) {
 }
 
 //vector<char *>FindMultiByPattern(char * raw ,  char * pattern ){
-vector<string> FindMultiByPattern(string raw, string pattern) {
+vector<string> FindMultiByPattern(string raw, string pattern, ofstream &logfile) {
 //    vector<char *>Multi ;
     vector<string> Multi;
 //    string str(raw);
@@ -66,7 +66,7 @@ vector<string> FindMultiByPattern(string raw, string pattern) {
 //        char *tmp = (char *)temp.data();
 //        Multi.push_back(tmp) ;
         Multi.push_back(temp);
-        //cout << "match: " << string(what[0].first,what[0].second) << endl;
+        //logfile << "match: " << string(what[0].first,what[0].second) << endl;
         start = what[0].second;
     }
 
@@ -81,7 +81,7 @@ vector<string> FindMultiByPattern(string raw, string pattern) {
  * */
 
 //char * FindSingleByPattern(char * raw , char * pattern){
-string FindSingleByPattern(string raw, string pattern) {
+string FindSingleByPattern(string raw, string pattern, ofstream &logfile) {
     assert(raw.size() != 0);
     string Single;
 //    string str(raw);
@@ -99,7 +99,7 @@ string FindSingleByPattern(string raw, string pattern) {
 //        char *tmp = (char *)temp.data();
 //        Single = tmp ;
         Single = temp;
-//        cout << "match: " << string(what[0].first,what[0].second) << endl;
+//        logfile << "match: " << string(what[0].first,what[0].second) << endl;
 //        start = what[0].second;
     }
     return Single;
@@ -108,20 +108,20 @@ string FindSingleByPattern(string raw, string pattern) {
 
 
 //char * DeleteByReg(char * raw , char * pattern){
-string DeleteByReg(string raw, string pattern) {
+string DeleteByReg(string raw, string pattern, ofstream &logfile) {
 //    std::string reg = pattern;
 //    boost::regex r(reg);
     boost::regex r(pattern);
     std::string fmt("\0");
 //    std::string res(raw);
-//    std::cout << regex_replace(res, r, fmt) << std::endl;
+//    std::logfile << regex_replace(res, r, fmt) << std::endl;
 //    string temp =  regex_replace(res, r, fmt);
     raw = regex_replace(raw, r, fmt);
 //    raw = (char *)temp.data();
     return raw;
 }
 
-string ReplaceSpace(string raw) {
+string ReplaceSpace(string raw, ofstream &logfile) {
     boost::regex r1(" +");
     std::string fmt1(" ");
     raw = regex_replace(raw, r1, fmt1);
@@ -131,7 +131,7 @@ string ReplaceSpace(string raw) {
     return raw;
 }
 
-string Replace(string raw, string from, string to){
+string Replace(string raw, string from, string to, ofstream &logfile){
     boost::regex r(from);
 //    std::string fmt(to);
     raw = regex_replace(raw, r, to);
@@ -145,20 +145,20 @@ string Replace(string raw, string from, string to){
  * */
 
 
-char *StringCut(const char *raw, char *start, char *end) {
+char *StringCut(const char *raw, char *start, char *end, ofstream &logfile) {
     char *nomatch = "not exist";
     if (!start || !end) {
-        cout << "start null" << endl;
+        logfile << "start null" << endl;
         return nomatch;
     }
     char *strtmp1 = strstr((char *) raw, start);
     if (!strtmp1) {
-        cout << "start not exist" << endl;
+        logfile << "start not exist" << endl;
         return nomatch;
     }
     char *strtmp2 = strstr(strtmp1, end);
     if (!strtmp1 || !strtmp2) {
-        cout << "end not exist" << endl;
+        logfile << "end not exist" << endl;
         return nomatch;
     }
 
@@ -194,7 +194,7 @@ char * CompleteSpringCut(const char * raw , char * start , char * end){
  * return a vector of words
  *
  * */
-vector<char *> StringSplit(char *raw, char *delim) {
+vector<char *> StringSplit(char *raw, char *delim, ofstream &logfile) {
     char *temp;
     vector<char *> SplitRes;
     temp = strtok(raw, (const char *) delim);
@@ -209,7 +209,7 @@ vector<char *> StringSplit(char *raw, char *delim) {
  * print elements of the vector
  * */
 
-int PrintVector(vector<string> v, ofstream &resfile) {     //basic class(basic_ios) does not allow to be copied ,
+int PrintVector(vector<string> v, ofstream &resfile, ofstream &logfile) {     //basic class(basic_ios) does not allow to be copied ,
     //you must pass the quotation arguement
     for (vector<string>::const_iterator iter = v.begin(); iter != v.end(); iter++) {
         resfile << (*iter) << '\t';

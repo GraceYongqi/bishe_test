@@ -5,7 +5,8 @@
 #include "caculation.h"
 
 int CaculateDensity(int *xres, int *yres, int approxStart, int approxEnd,
-                    vector<int> is_tag, vector<int> contentStart, vector<int> contentEnd, int contentStartLength, int contentEndLength, int length){
+                    vector<int> is_tag, vector<int> contentStart, vector<int> contentEnd, int contentStartLength,
+                    int contentEndLength, int length, ofstream &logfile){
 	assert(!is_tag.empty());
 	assert(!contentStart.empty());
 	assert(!contentEnd.empty());
@@ -21,7 +22,7 @@ int CaculateDensity(int *xres, int *yres, int approxStart, int approxEnd,
     else xend = M;
     for(x=xstart;x<=xend;x++){
 //    for(x=((*contentStart.begin())>0?(*contentStart.begin()):0);x<=(contentStart.at(contentStartLength-1)<M?M:contentStart.at(contentStartLength-1));x++){
-//cout << "for " << endl;
+//logfile << "for " << endl;
         int max = 0;
         density = CaculateVector(is_tag,0,x-1)+M-x+1-CaculateVector(is_tag,x,M);
         if(density > max){
@@ -42,7 +43,7 @@ int CaculateDensity(int *xres, int *yres, int approxStart, int approxEnd,
 	    int c2 = CaculateVector(is_tag,y,length);
 	    density = y-M+1-c1+c2;
 //        density = y-M+1-CaculateVector(is_tag,M,y)+CaculateVector(is_tag,y,length);
-//cout << " caculate end " << endl;
+//logfile << " caculate end " << endl;
         if(max < density){
             *yres = y;
         }
@@ -50,13 +51,13 @@ int CaculateDensity(int *xres, int *yres, int approxStart, int approxEnd,
     return 0;
 }
 
-int CaculateVector(vector<int> v, int start, int end){
+int CaculateVector(vector<int> v, int start, int end, ofstream &logfile){
 	assert(!v.empty());
     int res = 0;
 	int i = 0;
     for(i=start; i<end; i++){
-//cout << v.at(i) << endl;
-//cout << i << endl;
+//logfile << v.at(i) << endl;
+//logfile << i << endl;
         res += v.at(i);
     }
     return res;

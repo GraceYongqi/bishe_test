@@ -8,9 +8,10 @@
 #include "extraction.h"
 
 int CaculateDensity(int *xres, int *yres, int approxStart, int approxEnd,
-                    vector<int> is_tag, vector<int> contentStart, vector<int> contentEnd, int contentStartLength, int contentEndLength, int length);
+                    vector<int> is_tag, vector<int> contentStart, vector<int> contentEnd, int contentStartLength,
+                    int contentEndLength, int length, ofstream &logfile);
 //int CaculateDensity(int *xres, int *yres, int approxStart, int approxEnd,
 //                    vector<int> is_tag, vector<int> contentStart, vector<int> contentEnd, int length);
-int CaculateVector(vector<int> v, int start, int end);
+int CaculateVector(vector<int> v, int start, int end, ofstream &logfile);
 
 #endif //TEST_CACULATION_H

@@ -22,22 +22,22 @@
 
 using namespace std;
 
-char * FindTagByPattern(char *raw, char *pattern);
-char * StringCut(const char * raw , char * start, char * end);
+char * FindTagByPattern(char *raw, char *pattern,ofstream &logfile);
+char * StringCut(const char * raw , char * start, char * end, ofstream &logfile);
 //vector<char *> FindMultiByPattern(char * raw , char * pattern);
 //char * FindSingleByPattern(char * raw , char * pattern);
 //char * DeleteByReg(char * raw , char * pattern);
 //char * DeleteByReg(char * raw , char * pattern);
 
-vector<char *> StringSplit(char * raw , char * delim);
+vector<char *> StringSplit(char * raw , char * delim, ofstream &logfile);
 //int PrintVector(vector<char *> v , ofstream &resfile);
 
-vector<string>FindMultiByPattern(string raw ,  string pattern );
-string FindSingleByPattern(string raw , string pattern);
-string DeleteByReg(string raw , string pattern);
-int PrintVector(vector<string> v , ofstream &resfile);
-string ReplaceSpace(string raw);
-string Replace(string raw, string from, string to);
+vector<string>FindMultiByPattern(string raw ,  string pattern, ofstream &logfile );
+string FindSingleByPattern(string raw , string pattern,ofstream &logfile);
+string DeleteByReg(string raw , string pattern, ofstream &logfile);
+int PrintVector(vector<string> v , ofstream &resfile, ofstream &logfile);
+string ReplaceSpace(string raw, ofstream &logfile);
+string Replace(string raw, string from, string to, ofstream &logfile);
 
 
 #endif //BISHE_TEST_EXTRACTION_H
