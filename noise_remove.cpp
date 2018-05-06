@@ -5,7 +5,7 @@
 #include "noise_remove.h"
 
 
-int noise_remove(string contents, ofstream &resfile, ofstream &logfile){
+string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 
     /*
 //    step 1 extract content between <head> & </head>
@@ -134,8 +134,8 @@ int noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     string core3 = Replace(core2, "\t+", "\t",logfile);
     string core4 = Replace(core3, "\n+", "\n", logfile);
     string core = DeleteByReg(core4, "<br>", logfile);
-    resfile << "final result :" << endl;
-    resfile << core << endl;
+//    resfile << "final result :" << endl;
+//    resfile << core << endl;
 
 //  Release vector's memory
     vector<int>().swap(contentStart);
@@ -143,5 +143,5 @@ int noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     vector<int>().swap(TagFlag);
     vector<int>().swap(CandidateFlag);
 
-    return EXIT_SUCCESS;
+    return core;
 }

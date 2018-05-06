@@ -16,7 +16,6 @@
 */
 
 #include "noise_remove.h"
-#include <dirent.h>
 
 int main(int argc, char const *argv[])
 {
@@ -67,7 +66,18 @@ int main(int argc, char const *argv[])
         string contents(buffer.str());              // raw html file never be modified ----string type
         doc = contents.data();						// raw html file never be modified ----char * type
 
-        noise_remove(contents, resfile, logfile);
+//        Timing start
+        clock_t start;
+        clock_t end;
+        start = clock();
+        string rescontents = noise_remove(contents, resfile, logfile);
+//        Timing end
+        end = clock();
+        logfile << "noise_remove Runtime " << endl;
+        logfile << (double)(end - start) / CLOCKS_PER_SEC << "S" << endl;
+
+        resfile << "final result :" << endl;
+        resfile << rescontents << endl;
 
 //    donnot forget close files
         fin.close();

@@ -9,6 +9,6 @@
 #include "parse.h"
 #include "caculation.h"
 
-int noise_remove(string contents,  ofstream &resfile, ofstream &logfile);
+string noise_remove(string contents,  ofstream &resfile, ofstream &logfile);
 
 #endif //TEST_NOISE_REMOVE_H
