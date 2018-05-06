@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
         if (dirp->d_type == DT_REG) {
             // 文件
             cout << dirp->d_name << endl;
-            filelist.push_back(dirp->name);
+            filelist.push_back(dirp->d_name);
             vector<string> splitvec;
             boost::split(splitvec,dirp->d_name,boost::is_any_of("."));
             file_pre.push_back(splitvec[0]);
