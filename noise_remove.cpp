@@ -6,29 +6,41 @@
 
 
 string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
+    const char * doc = contents.data();
 
-    /*
 //    step 1 extract content between <head> & </head>
     char * headres;
-    headres = StringCut(doc , "<head>" , "</head>");
+    string HeadTag = FindSingleByPattern(contents,"<head.*?>", logfile);
+//    headres = StringCut(doc , "<head>" , "</head>");
+    headres = StringCut(doc , HeadTag.data() , "</head>");
     resfile << "title" << '\t' << StringCut((const char * )headres ,"<title>" , "</title>") << endl;
-//
-    char * keywordres= StringCut((const char * )headres,"<meta name=\"keywords\" content=\"" , "\" />");
+
+    char * keywordres1= StringCut((const char * )headres,"<meta name=\"keywords\" content=\"" , "\" />");
     resfile << "keywords" << '\t' ;
-//    PrintVector(StringSplit(keywordres , ",_") , resfile) ;
+    string keywordres(keywordres1);
+    vector<string> keywordvec ;
+    boost::split(keywordvec,keywordres,boost::is_any_of(",_"));
+    PrintVector(keywordvec , resfile, logfile) ;
     resfile << endl ;
     resfile << "description" << '\t' << StringCut((const char * )headres , "<meta name=\"description\" content=\"" , "\" />") << endl;
     resfile << "author" << '\t' << StringCut((const char * )headres , "<meta name=\"author\" content=\"" , "\" />") << endl;
 
 //    step 2 extract content between <body XXXXX> & </body>   --> target text
 //    maybe you can try moving the file pointer after </head>   ------- to be optimized
-    char * pattern = "<body.*>\n" ;
-    char * doc_for_body = (char *)doc ;                              //    ------ to be optimized
-    char * BodyTag = FindTagByReg(doc_for_body , pattern);
+//    char * pattern = "<body.*>\n" ;
+//    char * doc_for_body = (char *)doc ;                              //    ------ to be optimized
+//    char * BodyTag = FindTagByReg(doc_for_body , pattern);
+    string BodyTag = FindSingleByPattern(contents , "<body.*?>", logfile);
 //    logfile << "match tag " << BodyTag << endl;
-    char * bodyres = StringCut(doc , BodyTag , "</body>") ;
+//    char * bodyres = StringCut(doc , BodyTag , "</body>") ;
+    char * bodyres = StringCut(doc , BodyTag.data() , "</body>") ;
+    assert(bodyres!=NULL);
+    //backup
+    string bodycontent(bodyres);
+
 //    resfile << "body" << '\t' << bodyres << endl;
-*/
+
+    /*
 
 //    class Extractor
 //    目前只有.NET支持不确定长度的逆序环视，所以 <?<=body.*>)不能使用
@@ -52,15 +64,22 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     resfile << "description" << '\t' << FindSingleByPattern(headres , "(?<=<meta name=\"description\" content=\").*?(?=\")", logfile) << endl;
     resfile << "author" << '\t' << FindSingleByPattern(headres , "(?<=<meta name=\"author\" content=\").*?(?=\")", logfile) << endl;
 
+
 //    step 2 extract content between <body.*?> and </body>
 //    maybe you can try moving the file pointer after </head>   ------- to be optimized
 
 //    char * BodyTag = FindSingleByPattern((char *)doc , "<body.*?>") ;
+
+    string bodyres = substr(contents, strstr(contents, "<body"));
+    logfile << "body" << '\t' << bodyres << endl;
     string BodyTag = FindSingleByPattern(contents , "<body.*?>", logfile);
 //    logfile << "match tag " << BodyTag << endl;
 //    char * bodyres = FindSingleByPattern((char *)doc,"(?<="BodyTag").*?(?=</body>)");
     string bodyres = FindSingleByPattern(contents , "(?<="+BodyTag+").*?(?=</body>)", logfile);
-//    resfile << "body" << '\t' << bodyres << endl;
+*/
+
+
+
 
 
 //    step 3 delete unneccessary tags and get target text

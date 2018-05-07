@@ -106,6 +106,76 @@ string FindSingleByPattern(string raw, string pattern, ofstream &logfile) {
 
 }
 
+/*
+ * extract string between start & end
+ * */
+string StringCutByFind(string raw, string start, string end, ofstream &logfile){
+    string rawres = raw;
+    int pos1;
+    string cutres="";
+    int flag=0;
+    if ((pos1=rawres.find(start,flag))!=-1){
+        int s = pos1+start.length();
+        int pos2= rawres.find(end,s);
+        if(pos2!=-1){
+            int e = pos2+end.length();
+            //move pointer
+            cutres = rawres.substr(s, pos2-s);
+            flag=e;
+        }
+        else{
+            cutres=rawres.substr(s);;
+            flag=s;
+        }
+//        cout << cutres << endl;
+    }
+    return cutres;
+}
+
+/*
+ * delete string between start & end (including start end)
+ * */
+string StringDeleteByFind(string raw, string start, string end){
+    string rawres = raw;
+    int pos1;
+    string::iterator itr1, itr2;
+    while((pos1 = rawres.find(start))!=-1){
+        int s = pos1+start.length();
+        int pos2= rawres.find(end,s);
+        assert(pos2!=-1);
+        int e = pos2+end.length()-1;
+        //move pointer
+        itr1 = rawres.begin()+pos1;
+        itr2 = rawres.begin()+e;
+        rawres.erase(itr1, itr2);
+    }
+    return rawres;
+}
+
+/*
+ *delete successive character like \t \n
+ *
+ */
+string DeleteExtraSymbols(string raw, char symbol){
+    string rawres = raw;
+    int pos;
+    int start = 0;
+    while((pos=rawres.find(symbol,start))!=-1){
+        int i=pos+1;
+        int count=0;
+        while(rawres[i]==symbol){
+            count++;
+            i++;
+        }
+        if(count>0) rawres.erase(pos+1,count);
+        start=start+count+1;
+    }
+    return rawres;
+}
+
+string ReplaceByFind(string raw, string from, string to){
+
+}
 
 //char * DeleteByReg(char * raw , char * pattern){
 string DeleteByReg(string raw, string pattern, ofstream &logfile) {
@@ -147,7 +217,7 @@ string Replace(string raw, string from, string to, ofstream &logfile){
 
 char *StringCut(const char *raw, char *start, char *end, ofstream &logfile) {
     char *nomatch = "not exist";
-    if (!start || !end) {
+    if (!start || !end ||!raw) {
         logfile << "start null" << endl;
         return nomatch;
     }
@@ -184,9 +254,6 @@ char * CompleteSpringCut(const char * raw , char * start , char * end){
     const char * pattern = "<"
 }
 */
-
-
-
 
 
 /*

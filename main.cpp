@@ -56,7 +56,8 @@ int main(int argc, char const *argv[])
 
 //      read html file
         ifstream fin;
-        fin.open(filelist.at(i).data());
+        string readfile = "htmlfiles/" +filelist.at(i);
+        fin.open(readfile.data());
         assert(fin) ;
         const char * doc;
 //    txt -> string
