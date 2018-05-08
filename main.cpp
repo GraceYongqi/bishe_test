@@ -44,18 +44,21 @@ int main(int argc, char const *argv[])
     for(int i=0; i<filelist.size(); i++){
 //      open file for writing results
         ofstream resfile;
+        cout << "main.cpp 47" <<endl;
         string resultfile = "result/" +file_pre.at(i) +"_result.txt";
         resfile.open( resultfile.data());
         assert(resfile) ;
 
 //        open log for writing stdout
         ofstream logfile;
+        cout << "main.cpp 54" <<endl;
         string recordfile = "log/" +file_pre.at(i) +"_log.txt";
         logfile.open(recordfile.data());
         assert(logfile) ;
 
 //      read html file
         ifstream fin;
+        cout << "main.cpp 59" <<endl;
         string readfile = "htmlfiles/" +filelist.at(i);
         fin.open(readfile.data());
         assert(fin) ;

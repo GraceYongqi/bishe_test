@@ -22,13 +22,16 @@ logfile << "length:" << length << endl;
         labelStart = find_tag;
         if (i < labelStart) {
             if (labelStart != length - 1) {
+                cout << "noise_remove.cpp 25" <<endl;
                 contentStart.at(c) = i;
 //logfile <<"contentStart:" << contentStart.at(c) << endl;
 
+                cout << "noise_remove.cpp 29" <<endl;
                 contentEnd.at(c) = labelStart - 1;
 //logfile << "contentEnd:" << contentEnd.at(c) << endl;
                 c++;
                 for (int j = i; j < labelStart; j++) {
+                    cout << "noise_remove.cpp 34" <<endl;
                     is_tag.at(j) = 0;
                 }
             }
@@ -46,6 +49,7 @@ logfile << "length:" << length << endl;
         labelEnd = find_tag;
         if (labelStart != length - 1) {
             for (int j = labelStart; j <= labelEnd; j++) {
+                cout << "noise_remove.cpp 52" <<endl;
                 is_tag.at(j) = 1;
             }
         }
@@ -69,11 +73,18 @@ vector<int> GetCandidates(vector<int> &candidate, vector<int> &is_tag, int lengt
         int Num = end - start + 1;
         int tagNum = 0;
         for (int acc = start; acc <= end; acc++) {
+            cout << "noise_remove.cpp 76" <<endl;
             tagNum += is_tag.at(acc);
         }
         int charNum = Num - tagNum;
-        if (charNum > a * D) candidate.at(k) = 1;
-        else candidate.at(k) = 0;
+        if (charNum > a * D) {
+            cout << "noise_remove.cpp 81" <<endl;
+            candidate.at(k) = 1;
+        }
+        else {
+            cout << "noise_remove.cpp 85" <<endl;
+            candidate.at(k) = 0;
+        }
         k++;
     }
     return candidate;
@@ -82,6 +93,7 @@ vector<int> GetCandidates(vector<int> &candidate, vector<int> &is_tag, int lengt
 int GetProbableBoarder(int *start, int *end, int length, vector<int> candidate, int D, ofstream &logfile) {
     int k = 0, maxLength = 0, currentLength = 0, approxStart = 0, approxEnd = 0;
     while (k * D < length) {
+        cout << "noise_remove.cpp 96" <<endl;
         if (candidate.at(k) == 1) {
             currentLength++;
             k++;
