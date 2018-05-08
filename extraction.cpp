@@ -137,9 +137,9 @@ string CutByFind(string raw, string start, string end, ofstream &logfile){
  * */
 string DeleteByFind(string raw, string start, string end,ofstream &logfile){
     string rawres = raw;
-    int pos1;
+    int pos1 = 0;
     string::iterator itr1, itr2;
-    while((pos1 = rawres.find(start))!=-1){
+    while((pos1 = rawres.find(start,pos1))!=-1){
         int s = pos1+start.length();
         int pos2= rawres.find(end,s);
         if(pos2==-1) return rawres;
@@ -168,7 +168,7 @@ string DeleteExtraSymbols(string raw, char symbol, ofstream &logfile){
             i++;
         }
         if(count>0) rawres.erase(pos+1,count);
-        start=start+count+1;
+        start=pos+1;
     }
     return rawres;
 }
@@ -179,7 +179,12 @@ string DeleteExtraSymbols(string raw, char symbol, ofstream &logfile){
  * */
 string DeleteSingle(string raw, string single, ofstream &logfile){
     string rawres = raw;
-
+    int start = 0;
+    int pos;
+    while( (pos=rawres.find(single,start))!=-1 ){
+        rawres.erase(pos, single.length());
+        start=pos;
+    }
     return rawres;
 }
 
@@ -188,7 +193,16 @@ string DeleteSingle(string raw, string single, ofstream &logfile){
  * </p> --> \n
  * */
 string ReplaceByFind(string raw, string from, string to, ofstream &logfile){
-
+    string rawres = raw;
+    int len1 = from.length();
+    int len2 = to.length();
+    int pos;
+    int start = 0;
+    while( (pos=rawres.find(from, start))!=-1 ){
+        rawres.replace(pos,len1, to);
+        start = pos+len2;
+    }
+    return rawres;
 }
 
 
