@@ -109,7 +109,7 @@ string FindSingleByPattern(string raw, string pattern, ofstream &logfile) {
 /*
  * extract string between start & end
  * */
-string StringCutByFind(string raw, string start, string end, ofstream &logfile){
+string CutByFind(string raw, string start, string end, ofstream &logfile){
     string rawres = raw;
     int pos1;
     string cutres="";
@@ -135,15 +135,15 @@ string StringCutByFind(string raw, string start, string end, ofstream &logfile){
 /*
  * delete string between start & end (including start end)
  * */
-string StringDeleteByFind(string raw, string start, string end){
+string DeleteByFind(string raw, string start, string end,ofstream &logfile){
     string rawres = raw;
     int pos1;
     string::iterator itr1, itr2;
     while((pos1 = rawres.find(start))!=-1){
         int s = pos1+start.length();
         int pos2= rawres.find(end,s);
-        assert(pos2!=-1);
-        int e = pos2+end.length()-1;
+        if(pos2==-1) return rawres;
+        int e = pos2+end.length();
         //move pointer
         itr1 = rawres.begin()+pos1;
         itr2 = rawres.begin()+e;
@@ -156,7 +156,7 @@ string StringDeleteByFind(string raw, string start, string end){
  *delete successive character like \t \n
  *
  */
-string DeleteExtraSymbols(string raw, char symbol){
+string DeleteExtraSymbols(string raw, char symbol, ofstream &logfile){
     string rawres = raw;
     int pos;
     int start = 0;
@@ -173,9 +173,24 @@ string DeleteExtraSymbols(string raw, char symbol){
     return rawres;
 }
 
-string ReplaceByFind(string raw, string from, string to){
+/*
+ * delete assigned string ( single )
+ *
+ * */
+string DeleteSingle(string raw, string single, ofstream &logfile){
+    string rawres = raw;
+
+    return rawres;
+}
+
+/*
+ * replace from using to
+ * </p> --> \n
+ * */
+string ReplaceByFind(string raw, string from, string to, ofstream &logfile){
 
 }
+
 
 //char * DeleteByReg(char * raw , char * pattern){
 string DeleteByReg(string raw, string pattern, ofstream &logfile) {

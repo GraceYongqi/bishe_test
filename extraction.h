@@ -41,6 +41,13 @@ int PrintVector(vector<string> v , ofstream &resfile, ofstream &logfile);
 string ReplaceSpace(string raw, ofstream &logfile);
 string Replace(string raw, string from, string to, ofstream &logfile);
 
+string CutByFind(string raw, string start, string end, ofstream &logfile);
+string DeleteByFind(string raw, string start, string end, ofstream &logfile);
+string DeleteExtraSymbols(string raw, char symbol, ofstream &logfile);
+string ReplaceByFind(string raw, string from, string to, ofstream &logfile);
+string DeleteByReg(string raw, string pattern, ofstream &logfile);
+
+
 
 #endif //BISHE_TEST_EXTRACTION_H
 

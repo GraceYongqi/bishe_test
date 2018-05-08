@@ -38,6 +38,8 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     //backup
     string bodycontent(bodyres);
 
+
+
 //    resfile << "body" << '\t' << bodyres << endl;
 
     /*
@@ -86,17 +88,29 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 //    maybe you should save all unneccessary tags into a vector , delete them by traversing the vector ---- to be optimized
 //    three kinds of tags : comments tag ; special character ; html content tag
 //    char * commentres = DeleteByReg(bodyres,"<!--.*?-->|\/\*.*?\*\/");
-    string commentres = DeleteByReg(bodyres , "<!.*?-->|/\\*.*?\\*/", logfile);
+//    string commentres = DeleteByReg(bodyres , "<!.*?-->|/\\*.*?\\*/", logfile);
+    string commentres1 = DeleteByFind(bodycontent, "/*","*/", logfile);
+    string commentres = DeleteByFind(commentres1, "<!", "-->", logfile);
+
 
 //    char * contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
-    string contentres = DeleteByReg(commentres , "<script.*?>.*?</script>|<style.*?>.*?</style>", logfile);
+//    string contentres = DeleteByReg(commentres , "<script.*?>.*?</script>|<style.*?>.*?</style>", logfile);
+    string contentres1 = DeleteByFind(commentres, "<script", "</script>", logfile);
+    string contentres = DeleteByFind(contentres1, "<style", "</style>", logfile);
     resfile << "body after dele <!&/**/&<script>&<style> " << endl ;
 //    resfile << contentres << endl;
-    string areares = DeleteByReg(contentres , "<div.*?>|<font.*?>|<p.*?>", logfile);
+//    string areares = DeleteByReg(contentres , "<div.*?>|<font.*?>|<p.*?>", logfile);
+//    顺序待调整
+    string areares1 = DeleteByFind(contentres, "<div", ">", logfile);
+    string areares2 = DeleteByFind(areares1, "<font", ">", logfile);
+    sttring areares = DeleteByFind(areares2, "<p", ">", logfile);
     resfile << "body after dele <div&<font&<p" << endl;
 //    resfile << areares << endl;
 //    char * characterres ;
-    string characterres = DeleteByReg(areares , "&nbsp|&amp", logfile);
+//    string characterres = DeleteByReg(areares , "&nbsp|&amp", logfile);
+    string characterres1 = DeleteSingle(areares, "&nbsp", logfile);
+    string characterres2 = DeleteSingle(characterres1, "&amp", logfile);
+
     resfile << "body after dele special character" << endl;
 //    resfile << characterres << endl;
 
@@ -105,7 +119,9 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 
 //    step 5 get the candidate content by comparing with the threshold
     string target = characterres ;
-    target = ReplaceSpace(target, logfile);
+//    target = ReplaceSpace(target, logfile);
+    string target1 = DeleteExtraSymbols(target, ' ', logfile);
+    target = DeleteExtraSymbols(target1, '\n', logfile);
 
     int length = target.size() ;
     int exact_x=0, exact_y=0;
@@ -148,11 +164,21 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
        resfile << endl;
    */
 //    step 8 delete unneccessary tags
-    string core1 = DeleteByReg(coretarget, "<strong.*?>|<img.*?>|<a.*?>", logfile);
-    string core2 = Replace(core1, "</p.*?>","\n", logfile);
-    string core3 = Replace(core2, "\t+", "\t",logfile);
-    string core4 = Replace(core3, "\n+", "\n", logfile);
-    string core = DeleteByReg(core4, "<br>", logfile);
+//    顺序待调整
+//    string core1 = DeleteByReg(coretarget, "<strong.*?>|<img.*?>|<a.*?>", logfile);
+    string core11 = DeleteByFind(coretarget, "<a", ">", logfile);
+    string core12 = DeleteByFind(core11, "<img", ">", logfile);
+    string core1  = DeleteByFind(core12, "<strong", ">", logfile);
+
+//    string core2 = Replace(core1, "</p.*?>","\n", logfile);
+    string core2 = ReplaceByFind(core1, "</p>", "\n", logfile);
+
+//    string core3 = Replace(core2, "\t+", "\t",logfile);
+    string core3 = DeleteExtraSymbols(core2, '\t', logfile);
+//    string core4 = Replace(core3, "\n+", "\n", logfile);
+    string core4 = DeleteExtraSymbols(core3, '\n', logfile);
+//    string core = DeleteByReg(core4, "<br>", logfile);
+    string core = DeleteByFind(core4, "<br", ">", logfile);
 //    resfile << "final result :" << endl;
 //    resfile << core << endl;
 
