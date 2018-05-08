@@ -44,22 +44,38 @@ int main(int argc, char const *argv[])
     for(int i=0; i<filelist.size(); i++){
 //      open file for writing results
         ofstream resfile;
-        cout << "main.cpp 47" <<endl;
-        string resultfile = "result/" +file_pre.at(i) +"_result.txt";
+//        cout << "main.cpp 47" <<endl;
+        string resultfile;
+        try {
+            resultfile = "result/" + file_pre.at(i) + "_result.txt";
+        }catch(exception &e){
+            cout << __FILE__ << ":" << __FUNCTION__ << ":" << __LINE__ << e.what() << endl;
+        }
+
         resfile.open( resultfile.data());
         assert(resfile) ;
 
 //        open log for writing stdout
         ofstream logfile;
-        cout << "main.cpp 54" <<endl;
-        string recordfile = "log/" +file_pre.at(i) +"_log.txt";
+//        cout << "main.cpp 54" <<endl;
+        string recordfile;
+        try {
+            recordfile = "log/" + file_pre.at(i) + "_log.txt";
+        }catch(exception &e){
+            cout << __FILE__ << ":" << __FUNCTION__ << ":" << __LINE__ << e.what() << endl;
+        }
         logfile.open(recordfile.data());
         assert(logfile) ;
 
 //      read html file
         ifstream fin;
-        cout << "main.cpp 59" <<endl;
-        string readfile = "htmlfiles/" +filelist.at(i);
+//        cout << "main.cpp 59" <<endl;
+        string readfile;
+        try {
+            readfile = "htmlfiles/" + filelist.at(i);
+        }catch(exception &e){
+            cout << __FILE__ << ":" << __FUNCTION__ << ":" << __LINE__ << e.what() << endl;
+        }
         fin.open(readfile.data());
         assert(fin) ;
         const char * doc;

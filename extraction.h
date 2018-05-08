@@ -18,6 +18,8 @@
 #include <boost/algorithm/string.hpp>
 #include <dirent.h>
 #include <time.h>
+#include <exception>
+
 
 
 //#define  EXIT_SUCCESS 0 ;
