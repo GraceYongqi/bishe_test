@@ -9,21 +9,28 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     const char * doc = contents.data();
 
 //    step 1 extract content between <head> & </head>
-    char * headres;
+//    char * headres;
+    string headres;
     string HeadTag = FindSingleByPattern(contents,"<head.*?>", logfile);
 //    headres = StringCut(doc , "<head>" , "</head>");
-    headres = StringCut(doc , HeadTag.data() , "</head>");
-    resfile << "title" << '\t' << StringCut((const char * )headres ,"<title>" , "</title>") << endl;
+//    headres = StringCut(doc , HeadTag.data() , "</head>");
+    headres = CutByFind(contents, HeadTag, "</head>", logfile);
+//    resfile << "title" << '\t' << StringCut((const char * )headres ,"<title>" , "</title>") << endl;
+    resfile << "title" << '\t' << CutByFind(headres, "<title>", "</title>", logfile) << endl;
 
-    char * keywordres1= StringCut((const char * )headres,"<meta name=\"keywords\" content=\"" , "\" />");
+//    char * keywordres1= StringCut((const char * )headres,"<meta name=\"keywords\" content=\"" , "\" />");
+    string keywordres = CutByFind(headres, "<meta name=\"keywords\" content=\"" , "\"", logfile);
     resfile << "keywords" << '\t' ;
-    string keywordres(keywordres1);
+//    string keywordres(keywordres1);
     vector<string> keywordvec ;
     boost::split(keywordvec,keywordres,boost::is_any_of(",_"));
     PrintVector(keywordvec , resfile, logfile) ;
     resfile << endl ;
-    resfile << "description" << '\t' << StringCut((const char * )headres , "<meta name=\"description\" content=\"" , "\" />") << endl;
-    resfile << "author" << '\t' << StringCut((const char * )headres , "<meta name=\"author\" content=\"" , "\" />") << endl;
+//    resfile << "description" << '\t' << StringCut((const char * )headres , "<meta name=\"description\" content=\"" , "\" />") << endl;
+    resfile << "description" << '\t' << CutByFind(headres , "<meta name=\"description\" content=\"" , "\"", logfile) << endl;
+
+//    resfile << "author" << '\t' << StringCut((const char * )headres , "<meta name=\"author\" content=\"" , "\" />") << endl;
+    resfile << "author" << '\t' << CutByFind(headres , "<meta name=\"author\" content=\"" , "\"", logfile) << endl;
 
 //    step 2 extract content between <body XXXXX> & </body>   --> target text
 //    maybe you can try moving the file pointer after </head>   ------- to be optimized
@@ -33,10 +40,11 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     string BodyTag = FindSingleByPattern(contents , "<body.*?>", logfile);
 //    logfile << "match tag " << BodyTag << endl;
 //    char * bodyres = StringCut(doc , BodyTag , "</body>") ;
-    char * bodyres = StringCut(doc , BodyTag.data() , "</body>") ;
-    assert(bodyres!=NULL);
+//    char * bodyres = StringCut(doc , BodyTag.data() , "</body>") ;
+    string bodycontent = CutByFind(contents, BodyTag, "</body>", logfile);
+    assert(bodycontent!=NULL);
     //backup
-    string bodycontent(bodyres);
+//    string bodycontent(bodyres);
 
 
 
@@ -103,7 +111,7 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 //    顺序待调整
     string areares1 = DeleteByFind(contentres, "<div", ">", logfile);
     string areares2 = DeleteByFind(areares1, "<font", ">", logfile);
-    sttring areares = DeleteByFind(areares2, "<p", ">", logfile);
+    string areares = DeleteByFind(areares2, "<p", ">", logfile);
     resfile << "body after dele <div&<font&<p" << endl;
 //    resfile << areares << endl;
 //    char * characterres ;
