@@ -42,7 +42,7 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 //    char * bodyres = StringCut(doc , BodyTag , "</body>") ;
 //    char * bodyres = StringCut(doc , BodyTag.data() , "</body>") ;
     string bodycontent = CutByFind(contents, BodyTag, "</body>", logfile);
-    assert(bodycontent!=NULL);
+    assert(bodycontent.size()!=0);
     //backup
 //    string bodycontent(bodyres);
 
