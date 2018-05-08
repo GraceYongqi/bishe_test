@@ -40,7 +40,8 @@ int main(int argc, char const *argv[])
     }
 //    donnot forget close the direction
     closedir(dir);
-
+    clock_t sumStart = clock();
+    clock_t sumEnd;
     for(int i=0; i<filelist.size(); i++){
 //      open file for writing results
         ofstream resfile;
@@ -104,6 +105,8 @@ int main(int argc, char const *argv[])
         resfile.close();
         logfile.close();
     }
+    sumEnd = clock();
+    cout << "sum runtime: " << (double)(sumStart - sumEnd) / CLOCKS_PER_SEC << "S" << endl;
     return EXIT_SUCCESS;
 
 }
