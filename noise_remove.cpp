@@ -117,7 +117,7 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 //    char * characterres ;
 //    string characterres = DeleteByReg(areares , "&nbsp|&amp", logfile);
     string characterres1 = DeleteSingle(areares, "&nbsp", logfile);
-    string characterres2 = DeleteSingle(characterres1, "&amp", logfile);
+    string characterres = DeleteSingle(characterres1, "&amp", logfile);
 
     resfile << "body after dele special character" << endl;
 //    resfile << characterres << endl;
