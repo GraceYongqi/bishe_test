@@ -91,7 +91,13 @@ int main(int argc, char const *argv[])
         clock_t start;
         clock_t end;
         start = clock();
-        string rescontents = noise_remove(contents, resfile, logfile);
+        string rescontents;
+        try {
+            rescontents = noise_remove(contents, resfile, logfile);
+        }catch(exception &e){
+            cout << __FILE__ << ":" << __FUNCTION__ << ":" << __LINE__ << e.what() << endl;
+            continue;
+        }
 //        Timing end
         end = clock();
         logfile << "noise_remove Runtime " << endl;

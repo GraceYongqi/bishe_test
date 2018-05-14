@@ -109,10 +109,11 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 //    resfile << contentres << endl;
 //    string areares = DeleteByReg(contentres , "<div.*?>|<font.*?>|<p.*?>", logfile);
 //    顺序待调整
-    string areares1 = DeleteByFind(contentres, "<div", ">", logfile);
-    string areares2 = DeleteByFind(areares1, "<font", ">", logfile);
-    string areares = DeleteByFind(areares2, "<p", ">", logfile);
-    resfile << "body after dele <div&<font&<p" << endl;
+    string areares1 = DeleteByFind(contentres, "<font", ">", logfile);
+    string areares2 = DeleteByFind(areares1, "<div", ">", logfile);
+    string areares3 = DeleteByFind(areares2, "<span", "/span>", logfile);
+    string areares = DeleteByFind(areares3, "<p", ">", logfile);
+    resfile << "body after dele <div&<font&<p&<span" << endl;
 //    resfile << areares << endl;
 //    char * characterres ;
 //    string characterres = DeleteByReg(areares , "&nbsp|&amp", logfile);
@@ -178,15 +179,31 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     string core12 = DeleteByFind(core11, "<img", ">", logfile);
     string core1  = DeleteByFind(core12, "<strong", ">", logfile);
 
+//    delete extra symbols which patent doesn't mention  论文里需要补充这部分 附加标签说明
+/*    string core21 = DeleteSingle(core1, "</a>", logfile);
+    string core22 = DeleteSingle(core21, "<li>", logfile);
+    string core23 = DeleteByFind(core22, "<ul", ">", logfile);
+    string core24 = DeleteSingle(core23,"</ul>", logfile);
+    string core25 = DeleteSingle(core24, "</div>", logfile);
+    string core26 = DeleteByFind(core25, "<h", ">", logfile);
+    string core27 = DeleteSingle(core26, "</a>", logfile);
+    string core28 = DeleteSingle(core27, "</strong>", logfile);
+    string core29 = DeleteSingle(core28, "</img>", logfile);
+*/
+    string core29 = DeleteByFind(core1, "<", ">", logfile);
+    string core30 = ReplaceByFind(core29, "</li>", "\n", logfile);
+
 //    string core2 = Replace(core1, "</p.*?>","\n", logfile);
-    string core2 = ReplaceByFind(core1, "</p>", "\n", logfile);
+    string core2 = ReplaceByFind(core30, "</p>", "\n", logfile);
+
+    string core3 = DeleteByFind(core2, "<br", ">", logfile);
 
 //    string core3 = Replace(core2, "\t+", "\t",logfile);
-    string core3 = DeleteExtraSymbols(core2, '\t', logfile);
+    string core4 = DeleteExtraSymbols(core3, '\t', logfile);
+    string core5 = DeleteExtraSymbols(core4, " ", logfile);
 //    string core4 = Replace(core3, "\n+", "\n", logfile);
-    string core4 = DeleteExtraSymbols(core3, '\n', logfile);
+    string core = DeleteExtraSymbols(core5, '\n', logfile);
 //    string core = DeleteByReg(core4, "<br>", logfile);
-    string core = DeleteByFind(core4, "<br", ">", logfile);
 //    resfile << "final result :" << endl;
 //    resfile << core << endl;
 
