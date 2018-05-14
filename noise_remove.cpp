@@ -197,7 +197,8 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     string core2 = ReplaceByFind(core30, "</p>", "\n", logfile);
 
     string core3 = DeleteByFind(core2, "<br", ">", logfile);
-
+    logfile << "core3:" << endl;
+    logfile << core3 << endl;
 //    string core3 = Replace(core2, "\t+", "\t",logfile);
     string core4 = DeleteExtraSymbols(core3, '\t', logfile);
     string core5 = DeleteExtraSymbols(core4, ' ', logfile);
