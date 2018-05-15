@@ -97,8 +97,8 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 //    three kinds of tags : comments tag ; special character ; html content tag
 //    char * commentres = DeleteByReg(bodyres,"<!--.*?-->|\/\*.*?\*\/");
 //    string commentres = DeleteByReg(bodyres , "<!.*?-->|/\\*.*?\\*/", logfile);
-    DeleteByFind(bodycontent, "/*","*/", logfile);
-    DeleteByFind(commentres1, "<!", "-->", logfile);
+    DeleteByFind(&bodycontent, "/*","*/", logfile);
+    string commentres = DeleteByFind(&bodycontent, "<!", "-->", logfile);
 
 
 //    char * contentres = DeleteByReg(commentres , "<script.*?</script>|<div.*?</div>");
