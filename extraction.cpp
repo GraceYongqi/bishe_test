@@ -109,8 +109,8 @@ string FindSingleByPattern(string raw, string pattern, ofstream &logfile) {
 /*
  * extract string between start & end
  * */
-string CutByFind(string *raw, string start, string end, ofstream &logfile){
-    string rawres = *raw;
+string CutByFind(string raw, string start, string end, ofstream &logfile){
+    string rawres = raw;
     int pos1;
     string cutres="";
     int flag=0;
@@ -129,7 +129,6 @@ string CutByFind(string *raw, string start, string end, ofstream &logfile){
         }
 //        cout << cutres << endl;
     }
-    *raw = rawres;
     return cutres;
 }
 
