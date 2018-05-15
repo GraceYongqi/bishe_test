@@ -222,12 +222,12 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 
     DeleteByFind(&coretarget, "<br", ">", logfile);
     logfile << "core3:" << endl;
-    logfile << core3 << endl;
+    logfile << coretarget << endl;
 //    string core3 = Replace(core2, "\t+", "\t",logfile);
     DeleteExtraSymbols(&coretarget, '\t', logfile);
     DeleteExtraSymbols(&coretarget, ' ', logfile);
 //    string core4 = Replace(core3, "\n+", "\n", logfile);
-    core = DeleteExtraSymbols(&coretarget, '\n', logfile);
+    string core = DeleteExtraSymbols(&coretarget, '\n', logfile);
 //    string core = DeleteByReg(core4, "<br>", logfile);
 //    resfile << "final result :" << endl;
 //    resfile << core << endl;
