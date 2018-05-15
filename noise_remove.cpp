@@ -117,11 +117,12 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     DeleteByFind(&commentres, "<figure", "</figure>", logfile);
     DeleteByFind(&commentres, "<footer", "</footer>", logfile);
     DeleteByFind(&commentres, "<frame", "</frame>", logfile);
-    DeleteByFind(&commentres, "<audio", "</audio>", logfile);
-    DeleteByFind(&commentres, "<video", "</video>", logfile);
 
 
     DeleteByFind(&commentres, "<div", ">", logfile);
+    DeleteByFind(&commentres, "<th", ">", logfile);
+    DeleteByFind(&commentres, "<td", ">", logfile);
+
     DeleteByFind(&commentres, "<span", ">", logfile);
     DeleteByFind(&commentres, "<p", ">", logfile);
 
@@ -195,39 +196,62 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 //    顺序待调整
 //    string core1 = DeleteByReg(coretarget, "<strong.*?>|<img.*?>|<a.*?>", logfile);
     DeleteByFind(&coretarget, "<a", ">", logfile);
-    DeleteByFind(&coretarget, "<img", ">", logfile);
+    DeleteByFind(&coretarget, "<img", "</img>", logfile);
+    DeleteByFind(&coretarget, "<audio", "</audio>", logfile);
+    DeleteByFind(&coretarget, "<video", "</video>", logfile);
+
 
     DeleteByFind(&coretarget, "<strong", ">", logfile);
     DeleteByFind(&coretarget, "<em", ">", logfile);
     DeleteByFind(&coretarget, "<dfn", ">", logfile);
+    DeleteByFind(&coretarget, "<code", ">", logfile);
+    DeleteByFind(&coretarget, "<samp", ">", logfile);
+    DeleteByFind(&coretarget, "<kpd", ">", logfile);
+    DeleteByFind(&coretarget, "<var", ">", logfile);
+    DeleteByFind(&coretarget, "<cite", ">", logfile);
+    DeleteByFind(&coretarget, "<area", ">", logfile);
 
 
 //    delete extra symbols which patent doesn't mention  论文里需要补充这部分 附加标签说明
     DeleteSingle(&coretarget, "</a>", logfile);
     DeleteByFind(&coretarget, "<li", ">", logfile);
+    DeleteByFind(&coretarget, "<i", ">", logfile);
 //    string core22 = DeleteSingle(core21, "<li>", logfile);
     DeleteByFind(&coretarget, "<ul", ">", logfile);
+    DeleteByFind(&coretarget, "<u", ">", logfile);
+    DeleteByFind(&coretarget, "<b", ">", logfile);
+    DeleteSingle(&coretarget,"</b>", logfile);
+
+    DeleteSingle(&coretarget,"</u>", logfile);
     DeleteSingle(&coretarget,"</ul>", logfile);
+    DeleteSingle(&coretarget,"</i>", logfile);
+    DeleteSingle(&coretarget,"</th>", logfile);
+    DeleteSingle(&coretarget,"</td>", logfile);
+
+
     DeleteSingle(&coretarget, "</div>", logfile);
+
     DeleteByFind(&coretarget, "<h", ">", logfile);
+
     DeleteSingle(&coretarget, "</a>", logfile);
     DeleteSingle(&coretarget, "</strong>", logfile);
     DeleteSingle(&coretarget, "</img>", logfile);
 
 //    string core29 = DeleteByFind(core1, "<", ">", logfile);
-    ReplaceByFind(&coretarget, "</li>", "\n", logfile);
+//    ReplaceByFind(&coretarget, "</li>", "\n", logfile);
 
 //    string core2 = Replace(core1, "</p.*?>","\n", logfile);
-    ReplaceByFind(&coretarget, "</p>", "\n", logfile);
+//    ReplaceByFind(&coretarget, "<br>", "\n", logfile);
+//    ReplaceByFind(&coretarget, "</p>", "\n", logfile);
 
-    DeleteByFind(&coretarget, "<br", ">", logfile);
+//    DeleteByFind(&coretarget, "<br", ">", logfile);
     logfile << "core3:" << endl;
     logfile << coretarget << endl;
 //    string core3 = Replace(core2, "\t+", "\t",logfile);
     DeleteExtraSymbols(&coretarget, '\t', logfile);
     DeleteExtraSymbols(&coretarget, ' ', logfile);
 //    string core4 = Replace(core3, "\n+", "\n", logfile);
-    string core = DeleteExtraSymbols(&coretarget, '\n', logfile);
+//    string core = DeleteExtraSymbols(&coretarget, '\n', logfile);
 //    string core = DeleteByReg(core4, "<br>", logfile);
 //    resfile << "final result :" << endl;
 //    resfile << core << endl;
@@ -238,5 +262,6 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     vector<int>().swap(TagFlag);
     vector<int>().swap(CandidateFlag);
 
-    return core;
+//    return core;
+    return  coretarget;
 }

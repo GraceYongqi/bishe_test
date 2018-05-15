@@ -97,7 +97,7 @@ vector<int> GetCandidates(vector<int> &candidate, vector<int> &is_tag, int lengt
             }
         }
         int charNum = Num - tagNum;
-        if (charNum > a * D) {
+        if (charNum > a*D) {
 //            cout << "noise_remove.cpp 81" <<endl;
             try {
                 candidate.at(k) = 1;
