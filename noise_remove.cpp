@@ -180,7 +180,7 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     string core1  = DeleteByFind(core12, "<strong", ">", logfile);
 
 //    delete extra symbols which patent doesn't mention  论文里需要补充这部分 附加标签说明
-/*    string core21 = DeleteSingle(core1, "</a>", logfile);
+    string core21 = DeleteSingle(core1, "</a>", logfile);
     string core22 = DeleteSingle(core21, "<li>", logfile);
     string core23 = DeleteByFind(core22, "<ul", ">", logfile);
     string core24 = DeleteSingle(core23,"</ul>", logfile);
@@ -189,8 +189,8 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     string core27 = DeleteSingle(core26, "</a>", logfile);
     string core28 = DeleteSingle(core27, "</strong>", logfile);
     string core29 = DeleteSingle(core28, "</img>", logfile);
-*/
-    string core29 = DeleteByFind(core1, "<", ">", logfile);
+
+//    string core29 = DeleteByFind(core1, "<", ">", logfile);
     string core30 = ReplaceByFind(core29, "</li>", "\n", logfile);
 
 //    string core2 = Replace(core1, "</p.*?>","\n", logfile);
