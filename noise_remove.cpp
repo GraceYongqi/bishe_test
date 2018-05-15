@@ -240,12 +240,13 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     DeleteSingle(&coretarget, "</img>", logfile);
 
 //    string core29 = DeleteByFind(core1, "<", ">", logfile);
-//    ReplaceByFind(&coretarget, "</li>", "\n", logfile);
 
 //    string core2 = Replace(core1, "</p.*?>","\n", logfile);
     DeleteSingle(&coretarget, "\n", logfile);
     ReplaceByFind(&coretarget, "<br>", "\n", logfile);
     ReplaceByFind(&coretarget, "</p>", "\n", logfile);
+    ReplaceByFind(&coretarget, "</li>", "\n", logfile);
+
 
 //    DeleteByFind(&coretarget, "<br", ">", logfile);
     logfile << "core3:" << endl;
