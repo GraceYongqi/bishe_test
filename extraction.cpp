@@ -109,8 +109,8 @@ string FindSingleByPattern(string raw, string pattern, ofstream &logfile) {
 /*
  * extract string between start & end
  * */
-string CutByFind(string raw, string start, string end, ofstream &logfile){
-    string rawres = raw;
+string CutByFind(string *raw, string start, string end, ofstream &logfile){
+    string rawres = *raw;
     int pos1;
     string cutres="";
     int flag=0;
@@ -129,14 +129,15 @@ string CutByFind(string raw, string start, string end, ofstream &logfile){
         }
 //        cout << cutres << endl;
     }
+    *raw = rawres;
     return cutres;
 }
 
 /*
  * delete string between start & end (including start end)
  * */
-string DeleteByFind(string raw, string start, string end,ofstream &logfile){
-    string rawres = raw;
+string DeleteByFind(string *raw, string start, string end,ofstream &logfile){
+    string rawres = *raw;
     int pos1 = 0;
     string::iterator itr1, itr2;
     while((pos1 = rawres.find(start,pos1))!=-1){
@@ -149,6 +150,7 @@ string DeleteByFind(string raw, string start, string end,ofstream &logfile){
         itr2 = rawres.begin()+e;
         rawres.erase(itr1, itr2);
     }
+    *raw = rawres;
     return rawres;
 }
 
@@ -156,8 +158,8 @@ string DeleteByFind(string raw, string start, string end,ofstream &logfile){
  *delete successive character like \t \n
  *
  */
-string DeleteExtraSymbols(string raw, char symbol, ofstream &logfile){
-    string rawres = raw;
+string DeleteExtraSymbols(string *raw, char symbol, ofstream &logfile){
+    string rawres = *raw;
     int pos;
     int start = 0;
     while((pos=rawres.find(symbol,start))!=-1){
@@ -170,6 +172,7 @@ string DeleteExtraSymbols(string raw, char symbol, ofstream &logfile){
         if(count>0) rawres.erase(pos+1,count);
         start=pos+1;
     }
+    *raw = rawres;
     return rawres;
 }
 
@@ -177,14 +180,15 @@ string DeleteExtraSymbols(string raw, char symbol, ofstream &logfile){
  * delete assigned string ( single )
  *
  * */
-string DeleteSingle(string raw, string single, ofstream &logfile){
-    string rawres = raw;
+string DeleteSingle(string *raw, string single, ofstream &logfile){
+    string rawres = *raw;
     int start = 0;
     int pos;
     while( (pos=rawres.find(single,start))!=-1 ){
         rawres.erase(pos, single.length());
         start=pos;
     }
+    *raw = rawres;
     return rawres;
 }
 
@@ -192,8 +196,8 @@ string DeleteSingle(string raw, string single, ofstream &logfile){
  * replace from using to
  * </p> --> \n
  * */
-string ReplaceByFind(string raw, string from, string to, ofstream &logfile){
-    string rawres = raw;
+string ReplaceByFind(string *raw, string from, string to, ofstream &logfile){
+    string rawres = *raw;
     int len1 = from.length();
     int len2 = to.length();
     int pos;
@@ -202,6 +206,7 @@ string ReplaceByFind(string raw, string from, string to, ofstream &logfile){
         rawres.replace(pos,len1, to);
         start = pos+len2;
     }
+    *raw = rawres;
     return rawres;
 }
 
