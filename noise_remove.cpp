@@ -105,7 +105,7 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 //    string contentres = DeleteByReg(commentres , "<script.*?>.*?</script>|<style.*?>.*?</style>", logfile);
     DeleteByFind(&commentres, "<script", "</script>", logfile);
     DeleteByFind(&commentres, "<style", "</style>", logfile);
-    resfile << "body after dele <!&/**/&<script>&<style> " << endl ;
+//    resfile << "body after dele <!&/**/&<script>&<style> " << endl ;
 //    resfile << contentres << endl;
 //    string areares = DeleteByReg(contentres , "<div.*?>|<font.*?>|<p.*?>", logfile);
 //    顺序待调整
@@ -133,14 +133,14 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 
     DeleteByFind(&commentres, "<input", ">", logfile);
 
-    resfile << "body after dele <div&<font&<p&<span" << endl;
+//    resfile << "body after dele <div&<font&<p&<span" << endl;
 //    resfile << areares << endl;
 //    char * characterres ;
 //    string characterres = DeleteByReg(areares , "&nbsp|&amp", logfile);
     DeleteSingle(&commentres, "&nbsp", logfile);
     string characterres = DeleteSingle(&commentres, "&amp", logfile);
 
-    resfile << "body after dele special character" << endl;
+//    resfile << "body after dele special character" << endl;
 //    resfile << characterres << endl;
 
 //    class Parser
@@ -210,6 +210,7 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     DeleteByFind(&coretarget, "<var", ">", logfile);
     DeleteByFind(&coretarget, "<cite", ">", logfile);
     DeleteByFind(&coretarget, "<area", ">", logfile);
+    DeleteSingle(&coretarget, "</em>", logfile);
 
 
 //    delete extra symbols which patent doesn't mention  论文里需要补充这部分 附加标签说明

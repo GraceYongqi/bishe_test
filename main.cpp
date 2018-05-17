@@ -100,8 +100,8 @@ int main(int argc, char const *argv[])
         }
 //        Timing end
         end = clock();
-        logfile << "noise_remove Runtime " << endl;
-        logfile << (double)(end - start) / CLOCKS_PER_SEC << "S" << endl;
+        resfile << "noise_remove Runtime " << endl;
+        resfile << (double)(end - start) / CLOCKS_PER_SEC << "S" << endl;
 
         resfile << "final result :" << endl;
         resfile << rescontents << endl;
