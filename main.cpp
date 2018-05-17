@@ -100,7 +100,7 @@ int main(int argc, char const *argv[])
         }
 //        Timing end
         end = clock();
-        resfile << "noise_remove Runtime:  " ;
+        resfile << "网页正文抽取耗时(不包括文件读写):  " ;
         resfile << (double)(end - start) / CLOCKS_PER_SEC << "S" << endl;
 
         resfile << "final result :" << endl;
@@ -112,7 +112,7 @@ int main(int argc, char const *argv[])
         logfile.close();
     }
     sumEnd = clock();
-    cout << "sum runtime: " << (double)(sumStart - sumEnd) / CLOCKS_PER_SEC << "S" << endl;
+    cout << "sum runtime: " << (double)(sumEnd - sumStart) / CLOCKS_PER_SEC << "S" << endl;
     return EXIT_SUCCESS;
 
 }

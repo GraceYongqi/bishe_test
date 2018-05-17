@@ -17,21 +17,21 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 //    headres = StringCut(doc , HeadTag.data() , "</head>");
     headres = CutByFind(contents, HeadTag, "</head>", logfile);
 //    resfile << "title" << '\t' << StringCut((const char * )headres ,"<title>" , "</title>") << endl;
-    resfile << "title" << '\t' << CutByFind(headres, "<title>", "</title>", logfile) << endl;
+    resfile << "网页标题  " << '\t' << CutByFind(headres, "<title>", "</title>", logfile) << endl;
 
 //    char * keywordres1= StringCut((const char * )headres,"<meta name=\"keywords\" content=\"" , "\" />");
     string keywordres = CutByFind(headres, "<meta name=\"keywords\" content=\"" , "\"", logfile);
-    resfile << "keywords" << '\t' ;
+    resfile << "网页关键词" << '\t' ;
 //    string keywordres(keywordres1);
     vector<string> keywordvec ;
     boost::split(keywordvec,keywordres,boost::is_any_of(",_"));
     PrintVector(keywordvec , resfile, logfile) ;
     resfile << endl ;
 //    resfile << "description" << '\t' << StringCut((const char * )headres , "<meta name=\"description\" content=\"" , "\" />") << endl;
-    resfile << "description" << '\t' << CutByFind(headres , "<meta name=\"description\" content=\"" , "\"", logfile) << endl;
+    resfile << "网页描述  " << '\t' << CutByFind(headres , "<meta name=\"description\" content=\"" , "\"", logfile) << endl;
 
 //    resfile << "author" << '\t' << StringCut((const char * )headres , "<meta name=\"author\" content=\"" , "\" />") << endl;
-    resfile << "author" << '\t' << CutByFind(headres , "<meta name=\"author\" content=\"" , "\"", logfile) << endl;
+    resfile << "文章作者  " << '\t' << CutByFind(headres , "<meta name=\"author\" content=\"" , "\"", logfile) << endl;
 
 //    step 2 extract content between <body XXXXX> & </body>   --> target text
 //    maybe you can try moving the file pointer after </head>   ------- to be optimized
