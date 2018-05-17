@@ -123,6 +123,7 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     DeleteByFind(&commentres, "<div", ">", logfile);
     DeleteByFind(&commentres, "<th", ">", logfile);
     DeleteByFind(&commentres, "<td", ">", logfile);
+    DeleteByFind(&commentres, "<textarea", ">", logfile);
 
     DeleteByFind(&commentres, "<span", ">", logfile);
     DeleteByFind(&commentres, "<p", ">", logfile);
@@ -212,9 +213,12 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     DeleteByFind(&coretarget, "<cite", ">", logfile);
     DeleteByFind(&coretarget, "<area", ">", logfile);
     DeleteSingle(&coretarget, "</em>", logfile);
+    DeleteSingle(&coretarget, "</ins>", logfile);
+
 
 
 //    delete extra symbols which patent doesn't mention  论文里需要补充这部分 附加标签说明
+    DeleteSingle(&coretarget, "</textarea>", logfile);
     DeleteSingle(&coretarget, "</a>", logfile);
     DeleteByFind(&coretarget, "<li", ">", logfile);
     DeleteByFind(&coretarget, "<i", ">", logfile);
