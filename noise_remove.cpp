@@ -10,6 +10,7 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 
 //    step 1 extract content between <head> & </head>
 //    char * headres;
+    resfile << "网页文本长度:"  << contents.length() << endl;
     string headres;
     string HeadTag = FindSingleByPattern(contents,"<head.*?>", logfile);
 //    headres = StringCut(doc , "<head>" , "</head>");
@@ -182,7 +183,7 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 //    class Caculator
 //    step 7 caculate density and get the accurate border
     CaculateDensity(&exact_x, &exact_y, probablestart, probableend, TagFlag, contentStart, contentEnd, contentStartLength, contentEndLength, length, logfile);
-    logfile << "x:" << exact_x << " y:" << exact_y << endl;
+    resfile << "正文核心范围 " << "x:" << exact_x << " y:" << exact_y << endl;
     string coretarget = target.substr(exact_x, exact_y-exact_x+1);
 
     /*
