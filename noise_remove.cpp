@@ -255,6 +255,7 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     DeleteSingle(&coretarget, "</tbody>", logfile);
     DeleteSingle(&coretarget, "<thead>", logfile);
     DeleteSingle(&coretarget, "<iframe>", logfile);
+    DeleteSingle(&coretarget, "</iframe>", logfile);
     DeleteSingle(&coretarget, "<tbody>", logfile);
     DeleteByFind(&coretarget, "<ol", "</ol>", logfile);
     DeleteSingle(&coretarget, "<h1>", logfile);
