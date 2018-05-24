@@ -140,6 +140,7 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
 //    char * characterres ;
 //    string characterres = DeleteByReg(areares , "&nbsp|&amp", logfile);
     DeleteSingle(&commentres, "&nbsp", logfile);
+    DeleteSingle(&commentres, "&quot", logfile);
     string characterres = DeleteSingle(&commentres, "&amp", logfile);
 
 //    resfile << "body after dele special character" << endl;
@@ -246,6 +247,22 @@ string noise_remove(string contents, ofstream &resfile, ofstream &logfile){
     DeleteSingle(&coretarget, "</img>", logfile);
 
 //    string core29 = DeleteByFind(core1, "<", ">", logfile);
+    DeleteByFind(&coretarget, "<label", "</label>", logfile);
+    DeleteByFind(&coretarget, "<option", "</option>", logfile);
+    DeleteByFind(&coretarget, "<select", ">", logfile);
+    DeleteSingle(&coretarget, "</form>", logfile);
+    DeleteSingle(&coretarget, "</tr>", logfile);
+    DeleteSingle(&coretarget, "</tbody>", logfile);
+    DeleteSingle(&coretarget, "<thead>", logfile);
+    DeleteSingle(&coretarget, "<iframe>", logfile);
+    DeleteSingle(&coretarget, "<tbody>", logfile);
+    DeleteByFind(&coretarget, "<ol", "</ol>", logfile);
+    DeleteSingle(&coretarget, "<h1>", logfile);
+    DeleteSingle(&coretarget, "</h1>", logfile);
+    DeleteSingle(&coretarget, "<h2>", logfile);
+    DeleteSingle(&coretarget, "</h2>", logfile);
+    DeleteSingle(&coretarget, "<h3>", logfile);
+    DeleteSingle(&coretarget, "</h3>", logfile);
 
 //    string core2 = Replace(core1, "</p.*?>","\n", logfile);
     DeleteSingle(&coretarget, "\n", logfile);
